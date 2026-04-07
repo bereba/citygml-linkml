@@ -1,0 +1,108 @@
+
+
+# Class: HollowSpaceUsageValue 
+
+
+_CityGML class from package Tunnel_
+
+
+
+
+
+URI: [citygml:HollowSpaceUsageValue](https://www.ogc.org/standards/citygml/HollowSpaceUsageValue)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class HollowSpaceUsageValue
+    click HollowSpaceUsageValue href "../HollowSpaceUsageValue/"
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+
+
+
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [HollowSpace](HollowSpace.md) | [usage](usage.md) | range | [HollowSpaceUsageValue](HollowSpaceUsageValue.md) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://www.ogc.org/standards/citygml
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | citygml:HollowSpaceUsageValue |
+| native | citygml:HollowSpaceUsageValue |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: HollowSpaceUsageValue
+description: CityGML class from package Tunnel
+from_schema: https://www.ogc.org/standards/citygml
+abstract: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: HollowSpaceUsageValue
+description: CityGML class from package Tunnel
+from_schema: https://www.ogc.org/standards/citygml
+abstract: false
+
+```
+</details>

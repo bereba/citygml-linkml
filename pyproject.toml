@@ -6,4 +6,5 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "linkml>=1.10.0",
+    "mkdocs-material>=9.7.6",
 ]

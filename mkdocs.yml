@@ -1,0 +1,579 @@
+site_name: CityGML LinkML Schema
+site_description: LinkML schema generated from OGC CityGML 3.0
+repo_url: https://github.com/breveron/citygml-linkml
+repo_name: citygml-linkml
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - navigation.path
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Overview: index.md
+
+  - Schema Reference:
+    - Core:
+      - AbstractFeature: AbstractFeature.md
+      - AbstractFeatureWithLifespan: AbstractFeatureWithLifespan.md
+      - AbstractCityObject: AbstractCityObject.md
+      - AbstractSpace: AbstractSpace.md
+      - AbstractPhysicalSpace: AbstractPhysicalSpace.md
+      - AbstractOccupiedSpace: AbstractOccupiedSpace.md
+      - AbstractUnoccupiedSpace: AbstractUnoccupiedSpace.md
+      - AbstractLogicalSpace: AbstractLogicalSpace.md
+      - AbstractSpaceBoundary: AbstractSpaceBoundary.md
+      - AbstractThematicSurface: AbstractThematicSurface.md
+      - CityModel: CityModel.md
+      - CityModelMember: CityModelMember.md
+      - Address: Address.md
+      - XALAddress: XALAddress.md
+      - ClosureSurface: ClosureSurface.md
+      - ImplicitGeometry: ImplicitGeometry.md
+      - ExternalReference: ExternalReference.md
+      - Occupancy: Occupancy.md
+      - QualifiedArea: QualifiedArea.md
+      - QualifiedVolume: QualifiedVolume.md
+      - NilReason: NilReason.md
+      - DoubleOrNilReason: DoubleOrNilReason.md
+
+    - Appearance:
+      - AbstractAppearance: AbstractAppearance.md
+      - AbstractSurfaceData: AbstractSurfaceData.md
+      - AbstractTexture: AbstractTexture.md
+      - AbstractTextureParameterization: AbstractTextureParameterization.md
+      - Appearance: Appearance.md
+      - GeoreferencedTexture: GeoreferencedTexture.md
+      - ParameterizedTexture: ParameterizedTexture.md
+      - X3DMaterial: X3DMaterial.md
+      - TexCoordGen: TexCoordGen.md
+      - TexCoordList: TexCoordList.md
+      - Color: Color.md
+      - ColorPlusOpacity: ColorPlusOpacity.md
+
+    - Bridge:
+      - AbstractBridge: AbstractBridge.md
+      - Bridge: Bridge.md
+      - BridgePart: BridgePart.md
+      - BridgeConstructiveElement: BridgeConstructiveElement.md
+      - BridgeFurniture: BridgeFurniture.md
+      - BridgeInstallation: BridgeInstallation.md
+      - BridgeRoom: BridgeRoom.md
+
+    - Building:
+      - AbstractBuilding: AbstractBuilding.md
+      - AbstractBuildingSubdivision: AbstractBuildingSubdivision.md
+      - Building: Building.md
+      - BuildingPart: BuildingPart.md
+      - BuildingConstructiveElement: BuildingConstructiveElement.md
+      - BuildingFurniture: BuildingFurniture.md
+      - BuildingInstallation: BuildingInstallation.md
+      - BuildingRoom: BuildingRoom.md
+      - BuildingUnit: BuildingUnit.md
+      - Storey: Storey.md
+      - RoomHeight: RoomHeight.md
+
+    - CityFurniture:
+      - CityFurniture: CityFurniture.md
+
+    - CityObjectGroup:
+      - CityObjectGroup: CityObjectGroup.md
+
+    - Construction:
+      - AbstractConstruction: AbstractConstruction.md
+      - AbstractConstructionSurface: AbstractConstructionSurface.md
+      - AbstractConstructiveElement: AbstractConstructiveElement.md
+      - AbstractFillingElement: AbstractFillingElement.md
+      - AbstractFillingSurface: AbstractFillingSurface.md
+      - AbstractFurniture: AbstractFurniture.md
+      - AbstractInstallation: AbstractInstallation.md
+      - OtherConstruction: OtherConstruction.md
+      - ConstructionEvent: ConstructionEvent.md
+      - Elevation: Elevation.md
+      - Height: Height.md
+      - Surfaces:
+        - CeilingSurface: CeilingSurface.md
+        - FloorSurface: FloorSurface.md
+        - GroundSurface: GroundSurface.md
+        - InteriorWallSurface: InteriorWallSurface.md
+        - OuterCeilingSurface: OuterCeilingSurface.md
+        - OuterFloorSurface: OuterFloorSurface.md
+        - RoofSurface: RoofSurface.md
+        - WallSurface: WallSurface.md
+      - Fillings:
+        - Door: Door.md
+        - DoorSurface: DoorSurface.md
+        - Window: Window.md
+        - WindowSurface: WindowSurface.md
+
+    - Dynamizer:
+      - AbstractDynamizer: AbstractDynamizer.md
+      - AbstractTimeseries: AbstractTimeseries.md
+      - AbstractAtomicTimeseries: AbstractAtomicTimeseries.md
+      - Dynamizer: Dynamizer.md
+      - CompositeTimeseries: CompositeTimeseries.md
+      - GenericTimeseries: GenericTimeseries.md
+      - StandardFileTimeseries: StandardFileTimeseries.md
+      - TabulatedFileTimeseries: TabulatedFileTimeseries.md
+      - SensorConnection: SensorConnection.md
+      - TimeseriesComponent: TimeseriesComponent.md
+      - TimeValuePair: TimeValuePair.md
+
+    - Generics:
+      - AbstractGenericAttribute: AbstractGenericAttribute.md
+      - Generic Attributes:
+        - CodeAttribute: CodeAttribute.md
+        - DateAttribute: DateAttribute.md
+        - DoubleAttribute: DoubleAttribute.md
+        - GenericAttributeSet: GenericAttributeSet.md
+        - IntAttribute: IntAttribute.md
+        - MeasureAttribute: MeasureAttribute.md
+        - StringAttribute: StringAttribute.md
+        - UriAttribute: UriAttribute.md
+      - Generic Spaces:
+        - GenericLogicalSpace: GenericLogicalSpace.md
+        - GenericOccupiedSpace: GenericOccupiedSpace.md
+        - GenericThematicSurface: GenericThematicSurface.md
+        - GenericUnoccupiedSpace: GenericUnoccupiedSpace.md
+
+    - LandUse:
+      - LandUse: LandUse.md
+
+    - PointCloud:
+      - AbstractPointCloud: AbstractPointCloud.md
+      - PointCloud: PointCloud.md
+
+    - Relief:
+      - AbstractReliefComponent: AbstractReliefComponent.md
+      - BreaklineRelief: BreaklineRelief.md
+      - MassPointRelief: MassPointRelief.md
+      - RasterRelief: RasterRelief.md
+      - TINRelief: TINRelief.md
+      - ReliefFeature: ReliefFeature.md
+
+    - Transportation:
+      - AbstractTransportationSpace: AbstractTransportationSpace.md
+      - Road: Road.md
+      - Railway: Railway.md
+      - Track: Track.md
+      - Section: Section.md
+      - Square: Square.md
+      - Intersection: Intersection.md
+      - TrafficSpace: TrafficSpace.md
+      - TrafficArea: TrafficArea.md
+      - AuxiliaryTrafficSpace: AuxiliaryTrafficSpace.md
+      - AuxiliaryTrafficArea: AuxiliaryTrafficArea.md
+      - ClearanceSpace: ClearanceSpace.md
+      - Hole: Hole.md
+      - HoleSurface: HoleSurface.md
+      - Marking: Marking.md
+      - Waterway: Waterway.md
+
+    - Tunnel:
+      - AbstractTunnel: AbstractTunnel.md
+      - Tunnel: Tunnel.md
+      - TunnelPart: TunnelPart.md
+      - TunnelConstructiveElement: TunnelConstructiveElement.md
+      - TunnelFurniture: TunnelFurniture.md
+      - TunnelInstallation: TunnelInstallation.md
+      - HollowSpace: HollowSpace.md
+
+    - Vegetation:
+      - AbstractVegetationObject: AbstractVegetationObject.md
+      - PlantCover: PlantCover.md
+      - SolitaryVegetationObject: SolitaryVegetationObject.md
+
+    - Versioning:
+      - AbstractVersion: AbstractVersion.md
+      - AbstractVersionTransition: AbstractVersionTransition.md
+      - Version: Version.md
+      - VersionTransition: VersionTransition.md
+      - Transaction: Transaction.md
+
+    - WaterBody:
+      - AbstractWaterBoundarySurface: AbstractWaterBoundarySurface.md
+      - WaterBody: WaterBody.md
+      - WaterGroundSurface: WaterGroundSurface.md
+      - WaterSurface: WaterSurface.md
+
+  - Enumerations:
+    - Appearance:
+      - TextureType: TextureType.md
+      - WrapMode: WrapMode.md
+    - Bridge:
+      - BridgeClassValue: BridgeClassValue.md
+      - BridgeFunctionValue: BridgeFunctionValue.md
+      - BridgeUsageValue: BridgeUsageValue.md
+      - BridgeConstructiveElementClassValue: BridgeConstructiveElementClassValue.md
+      - BridgeConstructiveElementFunctionValue: BridgeConstructiveElementFunctionValue.md
+      - BridgeConstructiveElementUsageValue: BridgeConstructiveElementUsageValue.md
+      - BridgeFurnitureClassValue: BridgeFurnitureClassValue.md
+      - BridgeFurnitureFunctionValue: BridgeFurnitureFunctionValue.md
+      - BridgeFurnitureUsageValue: BridgeFurnitureUsageValue.md
+      - BridgeInstallationClassValue: BridgeInstallationClassValue.md
+      - BridgeInstallationFunctionValue: BridgeInstallationFunctionValue.md
+      - BridgeInstallationUsageValue: BridgeInstallationUsageValue.md
+      - BridgeRoomClassValue: BridgeRoomClassValue.md
+      - BridgeRoomFunctionValue: BridgeRoomFunctionValue.md
+      - BridgeRoomUsageValue: BridgeRoomUsageValue.md
+    - Building:
+      - BuildingClassValue: BuildingClassValue.md
+      - BuildingFunctionValue: BuildingFunctionValue.md
+      - BuildingUsageValue: BuildingUsageValue.md
+      - BuildingConstructiveElementClassValue: BuildingConstructiveElementClassValue.md
+      - BuildingConstructiveElementFunctionValue: BuildingConstructiveElementFunctionValue.md
+      - BuildingConstructiveElementUsageValue: BuildingConstructiveElementUsageValue.md
+      - BuildingFurnitureClassValue: BuildingFurnitureClassValue.md
+      - BuildingFurnitureFunctionValue: BuildingFurnitureFunctionValue.md
+      - BuildingFurnitureUsageValue: BuildingFurnitureUsageValue.md
+      - BuildingInstallationClassValue: BuildingInstallationClassValue.md
+      - BuildingInstallationFunctionValue: BuildingInstallationFunctionValue.md
+      - BuildingInstallationUsageValue: BuildingInstallationUsageValue.md
+      - BuildingRoomClassValue: BuildingRoomClassValue.md
+      - BuildingRoomFunctionValue: BuildingRoomFunctionValue.md
+      - BuildingRoomUsageValue: BuildingRoomUsageValue.md
+      - BuildingSubdivisionClassValue: BuildingSubdivisionClassValue.md
+      - BuildingSubdivisionFunctionValue: BuildingSubdivisionFunctionValue.md
+      - BuildingSubdivisionUsageValue: BuildingSubdivisionUsageValue.md
+    - CityFurniture:
+      - CityFurnitureClassValue: CityFurnitureClassValue.md
+      - CityFurnitureFunctionValue: CityFurnitureFunctionValue.md
+      - CityFurnitureUsageValue: CityFurnitureUsageValue.md
+    - CityObjectGroup:
+      - CityObjectGroupClassValue: CityObjectGroupClassValue.md
+      - CityObjectGroupFunctionValue: CityObjectGroupFunctionValue.md
+      - CityObjectGroupUsageValue: CityObjectGroupUsageValue.md
+    - Construction:
+      - ConditionOfConstructionValue: ConditionOfConstructionValue.md
+      - ElevationReferenceValue: ElevationReferenceValue.md
+      - EventValue: EventValue.md
+      - HeightStatusValue: HeightStatusValue.md
+      - RelationToConstruction: RelationToConstruction.md
+      - RoofTypeValue: RoofTypeValue.md
+      - RoomElevationReferenceValue: RoomElevationReferenceValue.md
+      - DoorClassValue: DoorClassValue.md
+      - DoorFunctionValue: DoorFunctionValue.md
+      - DoorUsageValue: DoorUsageValue.md
+      - WindowClassValue: WindowClassValue.md
+      - WindowFunctionValue: WindowFunctionValue.md
+      - WindowUsageValue: WindowUsageValue.md
+      - OtherConstructionClassValue: OtherConstructionClassValue.md
+      - OtherConstructionFunctionValue: OtherConstructionFunctionValue.md
+      - OtherConstructionUsageValue: OtherConstructionUsageValue.md
+    - Core:
+      - MimeTypeValue: MimeTypeValue.md
+      - NilReasonEnumeration: NilReasonEnumeration.md
+      - OccupantTypeValue: OccupantTypeValue.md
+      - QualifiedAreaTypeValue: QualifiedAreaTypeValue.md
+      - QualifiedVolumeTypeValue: QualifiedVolumeTypeValue.md
+      - RelationTypeValue: RelationTypeValue.md
+      - OtherRelationTypeValue: OtherRelationTypeValue.md
+      - SpaceType: SpaceType.md
+      - SurfaceMaterialValue: SurfaceMaterialValue.md
+      - RelativeToTerrain: RelativeToTerrain.md
+      - RelativeToWater: RelativeToWater.md
+    - Dynamizer:
+      - AuthenticationTypeValue: AuthenticationTypeValue.md
+      - IntervalValue: IntervalValue.md
+      - SensorConnectionTypeValue: SensorConnectionTypeValue.md
+      - StandardFileTypeValue: StandardFileTypeValue.md
+      - TabulatedFileTypeValue: TabulatedFileTypeValue.md
+      - TimeseriesTypeValue: TimeseriesTypeValue.md
+    - Generics:
+      - GenericLogicalSpaceClassValue: GenericLogicalSpaceClassValue.md
+      - GenericLogicalSpaceFunctionValue: GenericLogicalSpaceFunctionValue.md
+      - GenericLogicalSpaceUsageValue: GenericLogicalSpaceUsageValue.md
+      - GenericOccupiedSpaceClassValue: GenericOccupiedSpaceClassValue.md
+      - GenericOccupiedSpaceFunctionValue: GenericOccupiedSpaceFunctionValue.md
+      - GenericOccupiedSpaceUsageValue: GenericOccupiedSpaceUsageValue.md
+      - GenericThematicSurfaceClassValue: GenericThematicSurfaceClassValue.md
+      - GenericThematicSurfaceFunctionValue: GenericThematicSurfaceFunctionValue.md
+      - GenericThematicSurfaceUsageValue: GenericThematicSurfaceUsageValue.md
+      - GenericUnoccupiedSpaceClassValue: GenericUnoccupiedSpaceClassValue.md
+      - GenericUnoccupiedSpaceFunctionValue: GenericUnoccupiedSpaceFunctionValue.md
+      - GenericUnoccupiedSpaceUsageValue: GenericUnoccupiedSpaceUsageValue.md
+    - LandUse:
+      - LandUseClassValue: LandUseClassValue.md
+      - LandUseFunctionValue: LandUseFunctionValue.md
+      - LandUseUsageValue: LandUseUsageValue.md
+    - Transportation:
+      - AuxiliaryTrafficAreaClassValue: AuxiliaryTrafficAreaClassValue.md
+      - AuxiliaryTrafficAreaFunctionValue: AuxiliaryTrafficAreaFunctionValue.md
+      - AuxiliaryTrafficAreaUsageValue: AuxiliaryTrafficAreaUsageValue.md
+      - AuxiliaryTrafficSpaceClassValue: AuxiliaryTrafficSpaceClassValue.md
+      - AuxiliaryTrafficSpaceFunctionValue: AuxiliaryTrafficSpaceFunctionValue.md
+      - AuxiliaryTrafficSpaceUsageValue: AuxiliaryTrafficSpaceUsageValue.md
+      - ClearanceSpaceClassValue: ClearanceSpaceClassValue.md
+      - GranularityValue: GranularityValue.md
+      - HoleClassValue: HoleClassValue.md
+      - IntersectionClassValue: IntersectionClassValue.md
+      - MarkingClassValue: MarkingClassValue.md
+      - RailwayClassValue: RailwayClassValue.md
+      - RailwayFunctionValue: RailwayFunctionValue.md
+      - RailwayUsageValue: RailwayUsageValue.md
+      - RoadClassValue: RoadClassValue.md
+      - RoadFunctionValue: RoadFunctionValue.md
+      - RoadUsageValue: RoadUsageValue.md
+      - SectionClassValue: SectionClassValue.md
+      - SquareClassValue: SquareClassValue.md
+      - SquareFunctionValue: SquareFunctionValue.md
+      - SquareUsageValue: SquareUsageValue.md
+      - TrackClassValue: TrackClassValue.md
+      - TrackFunctionValue: TrackFunctionValue.md
+      - TrackUsageValue: TrackUsageValue.md
+      - TrafficAreaClassValue: TrafficAreaClassValue.md
+      - TrafficAreaFunctionValue: TrafficAreaFunctionValue.md
+      - TrafficAreaUsageValue: TrafficAreaUsageValue.md
+      - TrafficDirectionValue: TrafficDirectionValue.md
+      - TrafficSpaceClassValue: TrafficSpaceClassValue.md
+      - TrafficSpaceFunctionValue: TrafficSpaceFunctionValue.md
+      - TrafficSpaceUsageValue: TrafficSpaceUsageValue.md
+      - WaterwayClassValue: WaterwayClassValue.md
+      - WaterwayFunctionValue: WaterwayFunctionValue.md
+      - WaterwayUsageValue: WaterwayUsageValue.md
+    - Tunnel:
+      - HollowSpaceClassValue: HollowSpaceClassValue.md
+      - HollowSpaceFunctionValue: HollowSpaceFunctionValue.md
+      - HollowSpaceUsageValue: HollowSpaceUsageValue.md
+      - TunnelClassValue: TunnelClassValue.md
+      - TunnelFunctionValue: TunnelFunctionValue.md
+      - TunnelUsageValue: TunnelUsageValue.md
+      - TunnelConstructiveElementClassValue: TunnelConstructiveElementClassValue.md
+      - TunnelConstructiveElementFunctionValue: TunnelConstructiveElementFunctionValue.md
+      - TunnelConstructiveElementUsageValue: TunnelConstructiveElementUsageValue.md
+      - TunnelFurnitureClassValue: TunnelFurnitureClassValue.md
+      - TunnelFurnitureFunctionValue: TunnelFurnitureFunctionValue.md
+      - TunnelFurnitureUsageValue: TunnelFurnitureUsageValue.md
+      - TunnelInstallationClassValue: TunnelInstallationClassValue.md
+      - TunnelInstallationFunctionValue: TunnelInstallationFunctionValue.md
+      - TunnelInstallationUsageValue: TunnelInstallationUsageValue.md
+    - Vegetation:
+      - PlantCoverClassValue: PlantCoverClassValue.md
+      - PlantCoverFunctionValue: PlantCoverFunctionValue.md
+      - PlantCoverUsageValue: PlantCoverUsageValue.md
+      - SolitaryVegetationObjectClassValue: SolitaryVegetationObjectClassValue.md
+      - SolitaryVegetationObjectFunctionValue: SolitaryVegetationObjectFunctionValue.md
+      - SolitaryVegetationObjectUsageValue: SolitaryVegetationObjectUsageValue.md
+      - SpeciesValue: SpeciesValue.md
+    - Versioning:
+      - TemporalRelationTypeValue: TemporalRelationTypeValue.md
+      - TopologicalRelationTypeValue: TopologicalRelationTypeValue.md
+      - TransactionTypeValue: TransactionTypeValue.md
+      - TransitionTypeValue: TransitionTypeValue.md
+    - WaterBody:
+      - WaterBodyClassValue: WaterBodyClassValue.md
+      - WaterBodyFunctionValue: WaterBodyFunctionValue.md
+      - WaterBodyUsageValue: WaterBodyUsageValue.md
+      - WaterLevelValue: WaterLevelValue.md
+
+  - Data Types:
+    - Primitive Types:
+      - Boolean: Boolean.md
+      - Code: Code.md
+      - Date: Date.md
+      - DateOrDatetime: DateOrDatetime.md
+      - Datetime: Datetime.md
+      - Decimal: Decimal.md
+      - Double: Double.md
+      - Float: Float.md
+      - Integer: Integer.md
+      - String: String.md
+      - URI: URI.md
+      - Uri: Uri.md
+    - Numeric Ranges:
+      - DoubleBetween0and1: DoubleBetween0and1.md
+      - DoubleBetween0and1List: DoubleBetween0and1List.md
+      - DoubleList: DoubleList.md
+      - DoubleOrNilReasonList: DoubleOrNilReasonList.md
+      - IntegerBetween0and3: IntegerBetween0and3.md
+      - MeasureOrNilReasonList: MeasureOrNilReasonList.md
+    - Identifiers:
+      - Curie: Curie.md
+      - ID: ID.md
+      - Jsonpath: Jsonpath.md
+      - Jsonpointer: Jsonpointer.md
+      - Ncname: Ncname.md
+      - Nodeidentifier: Nodeidentifier.md
+      - Objectidentifier: Objectidentifier.md
+      - Sparqlpath: Sparqlpath.md
+      - Uriorcurie: Uriorcurie.md
+    - Geometry:
+      - TransformationMatrix2x2: TransformationMatrix2x2.md
+      - TransformationMatrix3x4: TransformationMatrix3x4.md
+      - TransformationMatrix4x4: TransformationMatrix4x4.md
+
+  - ADE Extensions:
+    - Core:
+      - ADEOfAbstractCityObject: ADEOfAbstractCityObject.md
+      - ADEOfAbstractDynamizer: ADEOfAbstractDynamizer.md
+      - ADEOfAbstractFeature: ADEOfAbstractFeature.md
+      - ADEOfAbstractFeatureWithLifespan: ADEOfAbstractFeatureWithLifespan.md
+      - ADEOfAbstractLogicalSpace: ADEOfAbstractLogicalSpace.md
+      - ADEOfAbstractOccupiedSpace: ADEOfAbstractOccupiedSpace.md
+      - ADEOfAbstractPhysicalSpace: ADEOfAbstractPhysicalSpace.md
+      - ADEOfAbstractPointCloud: ADEOfAbstractPointCloud.md
+      - ADEOfAbstractSpace: ADEOfAbstractSpace.md
+      - ADEOfAbstractSpaceBoundary: ADEOfAbstractSpaceBoundary.md
+      - ADEOfAbstractThematicSurface: ADEOfAbstractThematicSurface.md
+      - ADEOfAbstractUnoccupiedSpace: ADEOfAbstractUnoccupiedSpace.md
+      - ADEOfAbstractVersion: ADEOfAbstractVersion.md
+      - ADEOfAbstractVersionTransition: ADEOfAbstractVersionTransition.md
+      - ADEOfAddress: ADEOfAddress.md
+      - ADEOfCityModel: ADEOfCityModel.md
+      - ADEOfClosureSurface: ADEOfClosureSurface.md
+    - Appearance:
+      - ADEOfAbstractAppearance: ADEOfAbstractAppearance.md
+      - ADEOfAbstractSurfaceData: ADEOfAbstractSurfaceData.md
+      - ADEOfAbstractTexture: ADEOfAbstractTexture.md
+      - ADEOfAppearance: ADEOfAppearance.md
+      - ADEOfGeoreferencedTexture: ADEOfGeoreferencedTexture.md
+      - ADEOfParameterizedTexture: ADEOfParameterizedTexture.md
+      - ADEOfX3DMaterial: ADEOfX3DMaterial.md
+    - Bridge:
+      - ADEOfAbstractBridge: ADEOfAbstractBridge.md
+      - ADEOfBridge: ADEOfBridge.md
+      - ADEOfBridgeConstructiveElement: ADEOfBridgeConstructiveElement.md
+      - ADEOfBridgeFurniture: ADEOfBridgeFurniture.md
+      - ADEOfBridgeInstallation: ADEOfBridgeInstallation.md
+      - ADEOfBridgePart: ADEOfBridgePart.md
+      - ADEOfBridgeRoom: ADEOfBridgeRoom.md
+    - Building:
+      - ADEOfAbstractBuilding: ADEOfAbstractBuilding.md
+      - ADEOfAbstractBuildingSubdivision: ADEOfAbstractBuildingSubdivision.md
+      - ADEOfBuilding: ADEOfBuilding.md
+      - ADEOfBuildingConstructiveElement: ADEOfBuildingConstructiveElement.md
+      - ADEOfBuildingFurniture: ADEOfBuildingFurniture.md
+      - ADEOfBuildingInstallation: ADEOfBuildingInstallation.md
+      - ADEOfBuildingPart: ADEOfBuildingPart.md
+      - ADEOfBuildingRoom: ADEOfBuildingRoom.md
+      - ADEOfBuildingUnit: ADEOfBuildingUnit.md
+      - ADEOfStorey: ADEOfStorey.md
+    - CityFurniture:
+      - ADEOfCityFurniture: ADEOfCityFurniture.md
+    - CityObjectGroup:
+      - ADEOfCityObjectGroup: ADEOfCityObjectGroup.md
+    - Construction:
+      - ADEOfAbstractConstruction: ADEOfAbstractConstruction.md
+      - ADEOfAbstractConstructionSurface: ADEOfAbstractConstructionSurface.md
+      - ADEOfAbstractConstructiveElement: ADEOfAbstractConstructiveElement.md
+      - ADEOfAbstractFillingElement: ADEOfAbstractFillingElement.md
+      - ADEOfAbstractFillingSurface: ADEOfAbstractFillingSurface.md
+      - ADEOfAbstractFurniture: ADEOfAbstractFurniture.md
+      - ADEOfAbstractInstallation: ADEOfAbstractInstallation.md
+      - ADEOfCeilingSurface: ADEOfCeilingSurface.md
+      - ADEOfDoor: ADEOfDoor.md
+      - ADEOfDoorSurface: ADEOfDoorSurface.md
+      - ADEOfFloorSurface: ADEOfFloorSurface.md
+      - ADEOfGroundSurface: ADEOfGroundSurface.md
+      - ADEOfInteriorWallSurface: ADEOfInteriorWallSurface.md
+      - ADEOfOtherConstruction: ADEOfOtherConstruction.md
+      - ADEOfOuterCeilingSurface: ADEOfOuterCeilingSurface.md
+      - ADEOfOuterFloorSurface: ADEOfOuterFloorSurface.md
+      - ADEOfRoofSurface: ADEOfRoofSurface.md
+      - ADEOfWallSurface: ADEOfWallSurface.md
+      - ADEOfWindow: ADEOfWindow.md
+      - ADEOfWindowSurface: ADEOfWindowSurface.md
+    - Dynamizer:
+      - ADEOfAbstractAtomicTimeseries: ADEOfAbstractAtomicTimeseries.md
+      - ADEOfAbstractTimeseries: ADEOfAbstractTimeseries.md
+      - ADEOfCompositeTimeseries: ADEOfCompositeTimeseries.md
+      - ADEOfDynamizer: ADEOfDynamizer.md
+      - ADEOfGenericTimeseries: ADEOfGenericTimeseries.md
+      - ADEOfStandardFileTimeseries: ADEOfStandardFileTimeseries.md
+      - ADEOfTabulatedFileTimeseries: ADEOfTabulatedFileTimeseries.md
+    - Generics:
+      - ADEOfGenericLogicalSpace: ADEOfGenericLogicalSpace.md
+      - ADEOfGenericOccupiedSpace: ADEOfGenericOccupiedSpace.md
+      - ADEOfGenericThematicSurface: ADEOfGenericThematicSurface.md
+      - ADEOfGenericUnoccupiedSpace: ADEOfGenericUnoccupiedSpace.md
+    - LandUse:
+      - ADEOfLandUse: ADEOfLandUse.md
+    - PointCloud:
+      - ADEOfPointCloud: ADEOfPointCloud.md
+    - Relief:
+      - ADEOfAbstractReliefComponent: ADEOfAbstractReliefComponent.md
+      - ADEOfBreaklineRelief: ADEOfBreaklineRelief.md
+      - ADEOfMassPointRelief: ADEOfMassPointRelief.md
+      - ADEOfRasterRelief: ADEOfRasterRelief.md
+      - ADEOfReliefFeature: ADEOfReliefFeature.md
+      - ADEOfTINRelief: ADEOfTINRelief.md
+    - Transportation:
+      - ADEOfAbstractTransportationSpace: ADEOfAbstractTransportationSpace.md
+      - ADEOfAuxiliaryTrafficArea: ADEOfAuxiliaryTrafficArea.md
+      - ADEOfAuxiliaryTrafficSpace: ADEOfAuxiliaryTrafficSpace.md
+      - ADEOfClearanceSpace: ADEOfClearanceSpace.md
+      - ADEOfHole: ADEOfHole.md
+      - ADEOfHoleSurface: ADEOfHoleSurface.md
+      - ADEOfIntersection: ADEOfIntersection.md
+      - ADEOfMarking: ADEOfMarking.md
+      - ADEOfRailway: ADEOfRailway.md
+      - ADEOfRoad: ADEOfRoad.md
+      - ADEOfSection: ADEOfSection.md
+      - ADEOfSquare: ADEOfSquare.md
+      - ADEOfTrack: ADEOfTrack.md
+      - ADEOfTrafficArea: ADEOfTrafficArea.md
+      - ADEOfTrafficSpace: ADEOfTrafficSpace.md
+      - ADEOfWaterway: ADEOfWaterway.md
+    - Tunnel:
+      - ADEOfAbstractTunnel: ADEOfAbstractTunnel.md
+      - ADEOfHollowSpace: ADEOfHollowSpace.md
+      - ADEOfTunnel: ADEOfTunnel.md
+      - ADEOfTunnelConstructiveElement: ADEOfTunnelConstructiveElement.md
+      - ADEOfTunnelFurniture: ADEOfTunnelFurniture.md
+      - ADEOfTunnelInstallation: ADEOfTunnelInstallation.md
+      - ADEOfTunnelPart: ADEOfTunnelPart.md
+    - Vegetation:
+      - ADEOfAbstractVegetationObject: ADEOfAbstractVegetationObject.md
+      - ADEOfPlantCover: ADEOfPlantCover.md
+      - ADEOfSolitaryVegetationObject: ADEOfSolitaryVegetationObject.md
+    - Versioning:
+      - ADEOfVersion: ADEOfVersion.md
+      - ADEOfVersionTransition: ADEOfVersionTransition.md
+    - WaterBody:
+      - ADEOfAbstractWaterBoundarySurface: ADEOfAbstractWaterBoundarySurface.md
+      - ADEOfWaterBody: ADEOfWaterBody.md
+      - ADEOfWaterGroundSurface: ADEOfWaterGroundSurface.md
+      - ADEOfWaterSurface: ADEOfWaterSurface.md

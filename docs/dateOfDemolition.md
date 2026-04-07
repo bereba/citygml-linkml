@@ -1,0 +1,113 @@
+
+
+# Slot: dateOfDemolition 
+
+
+_Indicates the date at which the construction was demolished._
+
+
+
+
+
+URI: [citygml:dateOfDemolition](https://www.ogc.org/standards/citygml/dateOfDemolition)
+Alias: dateOfDemolition
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Building](Building.md) | A Building is a free-standing, self-supporting construction that is roofed, u... |  no  |
+| [AbstractBuilding](AbstractBuilding.md) | AbstractBuilding is an abstract superclass representing the common attributes... |  no  |
+| [Bridge](Bridge.md) | A Bridge represents a structure that affords the passage of pedestrians, anim... |  no  |
+| [OtherConstruction](OtherConstruction.md) | An OtherConstruction is a construction that is not covered by any of the othe... |  no  |
+| [AbstractBridge](AbstractBridge.md) | AbstractBridge is an abstract superclass representing the common attributes a... |  no  |
+| [AbstractConstruction](AbstractConstruction.md) | AbstractConstruction is the abstract superclass for objects that are manufact... |  no  |
+| [BuildingPart](BuildingPart.md) | A BuildingPart is a physical or functional subdivision of a Building |  no  |
+| [BridgePart](BridgePart.md) | A BridgePart is a physical or functional subdivision of a Bridge |  no  |
+| [TunnelPart](TunnelPart.md) | A TunnelPart is a physical or functional subdivision of a Tunnel |  no  |
+| [Tunnel](Tunnel.md) | A Tunnel represents a horizontal or sloping enclosed passage way of a certain... |  no  |
+| [AbstractTunnel](AbstractTunnel.md) | AbstractTunnel is an abstract superclass representing the common attributes a... |  no  |
+
+
+
+
+
+
+## Properties
+
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Date](Date.md) |
+| Domain Of | [AbstractConstruction](AbstractConstruction.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [AbstractConstruction](AbstractConstruction.md) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://www.ogc.org/standards/citygml
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | citygml:dateOfDemolition |
+| native | citygml:dateOfDemolition |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: dateOfDemolition
+description: Indicates the date at which the construction was demolished.
+from_schema: https://www.ogc.org/standards/citygml
+rank: 1000
+alias: dateOfDemolition
+owner: AbstractConstruction
+domain_of:
+- AbstractConstruction
+range: date
+required: false
+multivalued: false
+
+```
+</details>
