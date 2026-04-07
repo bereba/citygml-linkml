@@ -1,5 +1,9 @@
 # OGC CityGML 3.0
 
+!!! note
+
+    This documentation has been build with an automated pipeline as defined in this repository using linkml and takes no responsibility for unfulfilled stanadards or incomplete information.
+
 LinkML schema generated from OGC CityGML 3.0 UML/XMI model (Enterprise Architect export)
 
 URI: https://www.ogc.org/standards/citygml
