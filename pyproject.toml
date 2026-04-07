@@ -1,0 +1,9 @@
+[project]
+name = "citygml-linkml"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "linkml>=1.10.0",
+]
