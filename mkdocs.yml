@@ -1,6 +1,6 @@
 site_name: CityGML LinkML Schema
 site_description: LinkML schema generated from OGC CityGML 3.0
-repo_url: https://github.com/breveron/citygml-linkml
+repo_url: https://github.com/bereba/citygml-linkml
 repo_name: citygml-linkml
 docs_dir: docs
 
