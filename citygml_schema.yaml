@@ -1,0 +1,4836 @@
+name: citygml
+description: LinkML schema generated from OGC CityGML 3.0 UML/XMI model (Enterprise
+  Architect export)
+title: OGC CityGML 3.0
+id: https://www.ogc.org/standards/citygml
+version: '3.0'
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  citygml:
+    prefix_prefix: citygml
+    prefix_reference: https://www.ogc.org/standards/citygml/
+default_prefix: citygml
+default_range: string
+enums:
+  ConditionOfConstructionValue:
+    name: ConditionOfConstructionValue
+    description: CityGML enumeration from package Construction
+    permissible_values:
+      declined:
+        text: declined
+      demolished:
+        text: demolished
+      functional:
+        text: functional
+      projected:
+        text: projected
+      ruin:
+        text: ruin
+      underConstruction:
+        text: underConstruction
+  HeightStatusValue:
+    name: HeightStatusValue
+    description: CityGML enumeration from package Construction
+    permissible_values:
+      estimated:
+        text: estimated
+      measured:
+        text: measured
+  RelationToConstruction:
+    name: RelationToConstruction
+    description: CityGML enumeration from package Construction
+    permissible_values:
+      inside:
+        text: inside
+      outside:
+        text: outside
+      bothInsideAndOutside:
+        text: bothInsideAndOutside
+  TimeseriesTypeValue:
+    name: TimeseriesTypeValue
+    description: CityGML enumeration from package Dynamizer
+    permissible_values:
+      int:
+        text: int
+      double:
+        text: double
+      string:
+        text: string
+      geometry:
+        text: geometry
+      uri:
+        text: uri
+      bool:
+        text: bool
+      implicitGeometry:
+        text: implicitGeometry
+      appearance:
+        text: appearance
+  TransactionTypeValue:
+    name: TransactionTypeValue
+    description: CityGML enumeration from package Versioning
+    permissible_values:
+      insert:
+        text: insert
+      delete:
+        text: delete
+      replace:
+        text: replace
+  TransitionTypeValue:
+    name: TransitionTypeValue
+    description: CityGML enumeration from package Versioning
+    permissible_values:
+      planned:
+        text: planned
+      realized:
+        text: realized
+      historicalSuccession:
+        text: historicalSuccession
+      fork:
+        text: fork
+      merge:
+        text: merge
+  TextureType:
+    name: TextureType
+    description: CityGML enumeration from package Appearance
+    permissible_values:
+      specific:
+        text: specific
+      typical:
+        text: typical
+      unknown:
+        text: unknown
+  WrapMode:
+    name: WrapMode
+    description: CityGML enumeration from package Appearance
+    permissible_values:
+      none:
+        text: none
+      wrap:
+        text: wrap
+      mirror:
+        text: mirror
+      clamp:
+        text: clamp
+      border:
+        text: border
+  RelativeToTerrain:
+    name: RelativeToTerrain
+    description: CityGML enumeration from package Core
+    permissible_values:
+      entirelyAboveTerrain:
+        text: entirelyAboveTerrain
+      substantiallyAboveTerrain:
+        text: substantiallyAboveTerrain
+      substantiallyAboveAndBelowTerrain:
+        text: substantiallyAboveAndBelowTerrain
+      substantiallyBelowTerrain:
+        text: substantiallyBelowTerrain
+      entirelyBelowTerrain:
+        text: entirelyBelowTerrain
+  RelativeToWater:
+    name: RelativeToWater
+    description: CityGML enumeration from package Core
+    permissible_values:
+      entirelyAboveWaterSurface:
+        text: entirelyAboveWaterSurface
+      substantiallyAboveWaterSurface:
+        text: substantiallyAboveWaterSurface
+      substantiallyAboveAndBelowWaterSurface:
+        text: substantiallyAboveAndBelowWaterSurface
+      substantiallyBelowWaterSurface:
+        text: substantiallyBelowWaterSurface
+      entirelyBelowWaterSurface:
+        text: entirelyBelowWaterSurface
+      temporarilyAboveAndBelowWaterSurface:
+        text: temporarilyAboveAndBelowWaterSurface
+  SpaceType:
+    name: SpaceType
+    description: CityGML enumeration from package Core
+    permissible_values:
+      closed:
+        text: closed
+      open:
+        text: open
+      semiOpen:
+        text: semiOpen
+  GranularityValue:
+    name: GranularityValue
+    description: CityGML enumeration from package Transportation
+    permissible_values:
+      lane:
+        text: lane
+      way:
+        text: way
+  TrafficDirectionValue:
+    name: TrafficDirectionValue
+    description: CityGML enumeration from package Transportation
+    permissible_values:
+      forwards:
+        text: forwards
+      backwards:
+        text: backwards
+      both:
+        text: both
+classes:
+  ADEOfAbstractConstruction:
+    name: ADEOfAbstractConstruction
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfAbstractConstructionSurface:
+    name: ADEOfAbstractConstructionSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfAbstractConstructiveElement:
+    name: ADEOfAbstractConstructiveElement
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfAbstractFillingElement:
+    name: ADEOfAbstractFillingElement
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfAbstractFillingSurface:
+    name: ADEOfAbstractFillingSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfAbstractFurniture:
+    name: ADEOfAbstractFurniture
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfAbstractInstallation:
+    name: ADEOfAbstractInstallation
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfCeilingSurface:
+    name: ADEOfCeilingSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfDoor:
+    name: ADEOfDoor
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfDoorSurface:
+    name: ADEOfDoorSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfFloorSurface:
+    name: ADEOfFloorSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfGroundSurface:
+    name: ADEOfGroundSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfInteriorWallSurface:
+    name: ADEOfInteriorWallSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfOtherConstruction:
+    name: ADEOfOtherConstruction
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfOuterCeilingSurface:
+    name: ADEOfOuterCeilingSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfOuterFloorSurface:
+    name: ADEOfOuterFloorSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfRoofSurface:
+    name: ADEOfRoofSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfWallSurface:
+    name: ADEOfWallSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfWindow:
+    name: ADEOfWindow
+    description: CityGML class from package Construction
+    abstract: true
+  ADEOfWindowSurface:
+    name: ADEOfWindowSurface
+    description: CityGML class from package Construction
+    abstract: true
+  ConstructionEvent:
+    name: ConstructionEvent
+    description: CityGML class from package Construction
+    abstract: false
+    attributes:
+      event:
+        name: event
+        range: EventValue
+        required: true
+        multivalued: false
+      dateOfEvent:
+        name: dateOfEvent
+        range: date
+        required: true
+        multivalued: false
+      description:
+        name: description
+        range: string
+        required: false
+        multivalued: false
+  Elevation:
+    name: Elevation
+    description: CityGML class from package Construction
+    abstract: false
+    attributes:
+      elevationReference:
+        name: elevationReference
+        range: ElevationReferenceValue
+        required: true
+        multivalued: false
+      elevationValue:
+        name: elevationValue
+        range: string
+        required: true
+        multivalued: false
+  Height:
+    name: Height
+    description: CityGML class from package Construction
+    abstract: false
+    attributes:
+      highReference:
+        name: highReference
+        range: ElevationReferenceValue
+        required: true
+        multivalued: false
+      lowReference:
+        name: lowReference
+        range: ElevationReferenceValue
+        required: true
+        multivalued: false
+      status:
+        name: status
+        range: HeightStatusValue
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: float
+        required: true
+        multivalued: false
+  ADEOfAbstractAtomicTimeseries:
+    name: ADEOfAbstractAtomicTimeseries
+    description: CityGML class from package Dynamizer
+    abstract: true
+  ADEOfAbstractTimeseries:
+    name: ADEOfAbstractTimeseries
+    description: CityGML class from package Dynamizer
+    abstract: true
+  ADEOfCompositeTimeseries:
+    name: ADEOfCompositeTimeseries
+    description: CityGML class from package Dynamizer
+    abstract: true
+  ADEOfDynamizer:
+    name: ADEOfDynamizer
+    description: CityGML class from package Dynamizer
+    abstract: true
+  ADEOfGenericTimeseries:
+    name: ADEOfGenericTimeseries
+    description: CityGML class from package Dynamizer
+    abstract: true
+  ADEOfStandardFileTimeseries:
+    name: ADEOfStandardFileTimeseries
+    description: CityGML class from package Dynamizer
+    abstract: true
+  ADEOfTabulatedFileTimeseries:
+    name: ADEOfTabulatedFileTimeseries
+    description: CityGML class from package Dynamizer
+    abstract: true
+  SensorConnection:
+    name: SensorConnection
+    description: CityGML class from package Dynamizer
+    abstract: false
+    attributes:
+      connectionType:
+        name: connectionType
+        range: SensorConnectionTypeValue
+        required: true
+        multivalued: false
+      observationProperty:
+        name: observationProperty
+        range: string
+        required: true
+        multivalued: false
+      uom:
+        name: uom
+        range: string
+        required: false
+        multivalued: false
+      sensorID:
+        name: sensorID
+        range: string
+        required: false
+        multivalued: false
+      sensorName:
+        name: sensorName
+        range: string
+        required: false
+        multivalued: false
+      observationID:
+        name: observationID
+        range: string
+        required: false
+        multivalued: false
+      datastreamID:
+        name: datastreamID
+        range: string
+        required: false
+        multivalued: false
+      baseURL:
+        name: baseURL
+        range: uri
+        required: false
+        multivalued: false
+      authType:
+        name: authType
+        range: AuthenticationTypeValue
+        required: false
+        multivalued: false
+      mqttServer:
+        name: mqttServer
+        range: string
+        required: false
+        multivalued: false
+      mqttTopic:
+        name: mqttTopic
+        range: string
+        required: false
+        multivalued: false
+      linkToObservation:
+        name: linkToObservation
+        range: string
+        required: false
+        multivalued: false
+      linkToSensorDescription:
+        name: linkToSensorDescription
+        range: string
+        required: false
+        multivalued: false
+      sensorLocation:
+        name: sensorLocation
+        range: AbstractCityObject
+        required: false
+        multivalued: false
+  TimeseriesComponent:
+    name: TimeseriesComponent
+    description: CityGML class from package Dynamizer
+    abstract: false
+    attributes:
+      repetitions:
+        name: repetitions
+        range: integer
+        required: true
+        multivalued: false
+      additionalGap:
+        name: additionalGap
+        range: string
+        required: false
+        multivalued: false
+      timeseries:
+        name: timeseries
+        range: AbstractTimeseries
+        required: true
+        multivalued: false
+  TimeValuePair:
+    name: TimeValuePair
+    description: CityGML class from package Dynamizer
+    abstract: false
+    attributes:
+      timestamp:
+        name: timestamp
+        range: string
+        required: true
+        multivalued: false
+      intValue:
+        name: intValue
+        range: integer
+        required: false
+        multivalued: false
+      doubleValue:
+        name: doubleValue
+        range: float
+        required: false
+        multivalued: false
+      stringValue:
+        name: stringValue
+        range: string
+        required: false
+        multivalued: false
+      geometryValue:
+        name: geometryValue
+        range: string
+        required: false
+        multivalued: false
+      uriValue:
+        name: uriValue
+        range: uri
+        required: false
+        multivalued: false
+      boolValue:
+        name: boolValue
+        range: boolean
+        required: false
+        multivalued: false
+      implicitGeometryValue:
+        name: implicitGeometryValue
+        range: ImplicitGeometry
+        required: false
+        multivalued: false
+      appearanceValue:
+        name: appearanceValue
+        range: AbstractAppearance
+        required: false
+        multivalued: false
+  ADEOfPointCloud:
+    name: ADEOfPointCloud
+    description: CityGML class from package PointCloud
+    abstract: true
+  ADEOfVersion:
+    name: ADEOfVersion
+    description: CityGML class from package Versioning
+    abstract: true
+  ADEOfVersionTransition:
+    name: ADEOfVersionTransition
+    description: CityGML class from package Versioning
+    abstract: true
+  Transaction:
+    name: Transaction
+    description: CityGML class from package Versioning
+    abstract: false
+    attributes:
+      type:
+        name: type
+        range: TransactionTypeValue
+        required: true
+        multivalued: false
+      newFeature:
+        name: newFeature
+        range: AbstractFeatureWithLifespan
+        required: false
+        multivalued: false
+      oldFeature:
+        name: oldFeature
+        range: AbstractFeatureWithLifespan
+        required: false
+        multivalued: false
+  AbstractTextureParameterization:
+    name: AbstractTextureParameterization
+    description: CityGML class from package Appearance
+    abstract: true
+  ADEOfAbstractSurfaceData:
+    name: ADEOfAbstractSurfaceData
+    description: CityGML class from package Appearance
+    abstract: true
+  ADEOfAbstractTexture:
+    name: ADEOfAbstractTexture
+    description: CityGML class from package Appearance
+    abstract: true
+  ADEOfAppearance:
+    name: ADEOfAppearance
+    description: CityGML class from package Appearance
+    abstract: true
+  ADEOfGeoreferencedTexture:
+    name: ADEOfGeoreferencedTexture
+    description: CityGML class from package Appearance
+    abstract: true
+  ADEOfParameterizedTexture:
+    name: ADEOfParameterizedTexture
+    description: CityGML class from package Appearance
+    abstract: true
+  ADEOfX3DMaterial:
+    name: ADEOfX3DMaterial
+    description: CityGML class from package Appearance
+    abstract: true
+  TexCoordGen:
+    name: TexCoordGen
+    description: CityGML class from package Appearance
+    is_a: AbstractTextureParameterization
+    abstract: false
+    attributes:
+      worldToTexture:
+        name: worldToTexture
+        range: TransformationMatrix3x4
+        required: true
+        multivalued: false
+      crs:
+        name: crs
+        range: string
+        required: false
+        multivalued: false
+  TexCoordList:
+    name: TexCoordList
+    description: CityGML class from package Appearance
+    is_a: AbstractTextureParameterization
+    abstract: false
+    attributes:
+      textureCoordinates:
+        name: textureCoordinates
+        range: DoubleList
+        required: true
+        multivalued: true
+      ring:
+        name: ring
+        range: uri
+        required: true
+        multivalued: true
+  ADEOfAbstractBridge:
+    name: ADEOfAbstractBridge
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfBridge:
+    name: ADEOfBridge
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfBridgeConstructiveElement:
+    name: ADEOfBridgeConstructiveElement
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfBridgeFurniture:
+    name: ADEOfBridgeFurniture
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfBridgeInstallation:
+    name: ADEOfBridgeInstallation
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfBridgePart:
+    name: ADEOfBridgePart
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfBridgeRoom:
+    name: ADEOfBridgeRoom
+    description: CityGML class from package Bridge
+    abstract: true
+  ADEOfAbstractBuilding:
+    name: ADEOfAbstractBuilding
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfAbstractBuildingSubdivision:
+    name: ADEOfAbstractBuildingSubdivision
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuilding:
+    name: ADEOfBuilding
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuildingConstructiveElement:
+    name: ADEOfBuildingConstructiveElement
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuildingFurniture:
+    name: ADEOfBuildingFurniture
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuildingInstallation:
+    name: ADEOfBuildingInstallation
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuildingPart:
+    name: ADEOfBuildingPart
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuildingRoom:
+    name: ADEOfBuildingRoom
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfBuildingUnit:
+    name: ADEOfBuildingUnit
+    description: CityGML class from package Building
+    abstract: true
+  ADEOfStorey:
+    name: ADEOfStorey
+    description: CityGML class from package Building
+    abstract: true
+  RoomHeight:
+    name: RoomHeight
+    description: CityGML class from package Building
+    abstract: false
+    attributes:
+      highReference:
+        name: highReference
+        range: RoomElevationReferenceValue
+        required: true
+        multivalued: false
+      lowReference:
+        name: lowReference
+        range: RoomElevationReferenceValue
+        required: true
+        multivalued: false
+      status:
+        name: status
+        range: HeightStatusValue
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: float
+        required: true
+        multivalued: false
+  ADEOfCityFurniture:
+    name: ADEOfCityFurniture
+    description: CityGML class from package CityFurniture
+    abstract: true
+  ADEOfCityObjectGroup:
+    name: ADEOfCityObjectGroup
+    description: CityGML class from package CityObjectGroup
+    abstract: true
+  AbstractGenericAttribute:
+    name: AbstractGenericAttribute
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractAppearance:
+    name: ADEOfAbstractAppearance
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractCityObject:
+    name: ADEOfAbstractCityObject
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractDynamizer:
+    name: ADEOfAbstractDynamizer
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractFeature:
+    name: ADEOfAbstractFeature
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractFeatureWithLifespan:
+    name: ADEOfAbstractFeatureWithLifespan
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractLogicalSpace:
+    name: ADEOfAbstractLogicalSpace
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractOccupiedSpace:
+    name: ADEOfAbstractOccupiedSpace
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractPhysicalSpace:
+    name: ADEOfAbstractPhysicalSpace
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractPointCloud:
+    name: ADEOfAbstractPointCloud
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractSpace:
+    name: ADEOfAbstractSpace
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractSpaceBoundary:
+    name: ADEOfAbstractSpaceBoundary
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractThematicSurface:
+    name: ADEOfAbstractThematicSurface
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractUnoccupiedSpace:
+    name: ADEOfAbstractUnoccupiedSpace
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractVersion:
+    name: ADEOfAbstractVersion
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAbstractVersionTransition:
+    name: ADEOfAbstractVersionTransition
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfAddress:
+    name: ADEOfAddress
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfCityModel:
+    name: ADEOfCityModel
+    description: CityGML class from package Core
+    abstract: true
+  ADEOfClosureSurface:
+    name: ADEOfClosureSurface
+    description: CityGML class from package Core
+    abstract: true
+  CityModelMember:
+    name: CityModelMember
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      cityObjectMember:
+        name: cityObjectMember
+        range: AbstractCityObject
+        required: true
+        multivalued: false
+      appearanceMember:
+        name: appearanceMember
+        range: AbstractAppearance
+        required: true
+        multivalued: false
+      versionMember:
+        name: versionMember
+        range: AbstractVersion
+        required: true
+        multivalued: false
+      versionTransitionMember:
+        name: versionTransitionMember
+        range: AbstractVersionTransition
+        required: true
+        multivalued: false
+      featureMember:
+        name: featureMember
+        range: AbstractFeature
+        required: true
+        multivalued: false
+  DoubleOrNilReason:
+    name: DoubleOrNilReason
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      value:
+        name: value
+        range: float
+        required: true
+        multivalued: false
+      nilReason:
+        name: nilReason
+        range: NilReason
+        required: true
+        multivalued: false
+  ExternalReference:
+    name: ExternalReference
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      targetResource:
+        name: targetResource
+        range: uri
+        required: true
+        multivalued: false
+      informationSystem:
+        name: informationSystem
+        range: uri
+        required: false
+        multivalued: false
+      relationType:
+        name: relationType
+        range: uri
+        required: false
+        multivalued: false
+  NilReason:
+    name: NilReason
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      nilReasonEnumeration:
+        name: nilReasonEnumeration
+        range: NilReasonEnumeration
+        required: true
+        multivalued: false
+      URI:
+        name: URI
+        range: uri
+        required: true
+        multivalued: false
+  Occupancy:
+    name: Occupancy
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      numberOfOccupants:
+        name: numberOfOccupants
+        range: integer
+        required: true
+        multivalued: false
+      interval:
+        name: interval
+        range: IntervalValue
+        required: false
+        multivalued: false
+      occupantType:
+        name: occupantType
+        range: OccupantTypeValue
+        required: false
+        multivalued: false
+  QualifiedArea:
+    name: QualifiedArea
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      area:
+        name: area
+        range: float
+        required: true
+        multivalued: false
+      typeOfArea:
+        name: typeOfArea
+        range: QualifiedAreaTypeValue
+        required: true
+        multivalued: false
+  QualifiedVolume:
+    name: QualifiedVolume
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      volume:
+        name: volume
+        range: float
+        required: true
+        multivalued: false
+      typeOfVolume:
+        name: typeOfVolume
+        range: QualifiedVolumeTypeValue
+        required: true
+        multivalued: false
+  XALAddress:
+    name: XALAddress
+    description: CityGML class from package Core
+    abstract: false
+  ADEOfGenericLogicalSpace:
+    name: ADEOfGenericLogicalSpace
+    description: CityGML class from package Generics
+    abstract: true
+  ADEOfGenericOccupiedSpace:
+    name: ADEOfGenericOccupiedSpace
+    description: CityGML class from package Generics
+    abstract: true
+  ADEOfGenericThematicSurface:
+    name: ADEOfGenericThematicSurface
+    description: CityGML class from package Generics
+    abstract: true
+  ADEOfGenericUnoccupiedSpace:
+    name: ADEOfGenericUnoccupiedSpace
+    description: CityGML class from package Generics
+    abstract: true
+  CodeAttribute:
+    name: CodeAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: Code
+        required: true
+        multivalued: false
+  DateAttribute:
+    name: DateAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: date
+        required: true
+        multivalued: false
+  DoubleAttribute:
+    name: DoubleAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: float
+        required: true
+        multivalued: false
+  GenericAttributeSet:
+    name: GenericAttributeSet
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      codeSpace:
+        name: codeSpace
+        range: uri
+        required: false
+        multivalued: false
+      genericAttribute:
+        name: genericAttribute
+        range: AbstractGenericAttribute
+        required: true
+        multivalued: true
+  IntAttribute:
+    name: IntAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: integer
+        required: true
+        multivalued: false
+  MeasureAttribute:
+    name: MeasureAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: float
+        required: true
+        multivalued: false
+  StringAttribute:
+    name: StringAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: string
+        required: true
+        multivalued: false
+  UriAttribute:
+    name: UriAttribute
+    description: CityGML class from package Generics
+    is_a: AbstractGenericAttribute
+    abstract: false
+    attributes:
+      name:
+        name: name
+        range: string
+        required: true
+        multivalued: false
+      value:
+        name: value
+        range: uri
+        required: true
+        multivalued: false
+  ADEOfLandUse:
+    name: ADEOfLandUse
+    description: CityGML class from package LandUse
+    abstract: true
+  ADEOfAbstractReliefComponent:
+    name: ADEOfAbstractReliefComponent
+    description: CityGML class from package Relief
+    abstract: true
+  ADEOfBreaklineRelief:
+    name: ADEOfBreaklineRelief
+    description: CityGML class from package Relief
+    abstract: true
+  ADEOfMassPointRelief:
+    name: ADEOfMassPointRelief
+    description: CityGML class from package Relief
+    abstract: true
+  ADEOfRasterRelief:
+    name: ADEOfRasterRelief
+    description: CityGML class from package Relief
+    abstract: true
+  ADEOfReliefFeature:
+    name: ADEOfReliefFeature
+    description: CityGML class from package Relief
+    abstract: true
+  ADEOfTINRelief:
+    name: ADEOfTINRelief
+    description: CityGML class from package Relief
+    abstract: true
+  ADEOfAbstractTransportationSpace:
+    name: ADEOfAbstractTransportationSpace
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfAuxiliaryTrafficArea:
+    name: ADEOfAuxiliaryTrafficArea
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfAuxiliaryTrafficSpace:
+    name: ADEOfAuxiliaryTrafficSpace
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfClearanceSpace:
+    name: ADEOfClearanceSpace
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfHole:
+    name: ADEOfHole
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfHoleSurface:
+    name: ADEOfHoleSurface
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfIntersection:
+    name: ADEOfIntersection
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfMarking:
+    name: ADEOfMarking
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfRailway:
+    name: ADEOfRailway
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfRoad:
+    name: ADEOfRoad
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfSection:
+    name: ADEOfSection
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfSquare:
+    name: ADEOfSquare
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfTrack:
+    name: ADEOfTrack
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfTrafficArea:
+    name: ADEOfTrafficArea
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfTrafficSpace:
+    name: ADEOfTrafficSpace
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfWaterway:
+    name: ADEOfWaterway
+    description: CityGML class from package Transportation
+    abstract: true
+  ADEOfAbstractTunnel:
+    name: ADEOfAbstractTunnel
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfHollowSpace:
+    name: ADEOfHollowSpace
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfTunnel:
+    name: ADEOfTunnel
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfTunnelConstructiveElement:
+    name: ADEOfTunnelConstructiveElement
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfTunnelFurniture:
+    name: ADEOfTunnelFurniture
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfTunnelInstallation:
+    name: ADEOfTunnelInstallation
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfTunnelPart:
+    name: ADEOfTunnelPart
+    description: CityGML class from package Tunnel
+    abstract: true
+  ADEOfAbstractVegetationObject:
+    name: ADEOfAbstractVegetationObject
+    description: CityGML class from package Vegetation
+    abstract: true
+  ADEOfPlantCover:
+    name: ADEOfPlantCover
+    description: CityGML class from package Vegetation
+    abstract: true
+  ADEOfSolitaryVegetationObject:
+    name: ADEOfSolitaryVegetationObject
+    description: CityGML class from package Vegetation
+    abstract: true
+  ADEOfAbstractWaterBoundarySurface:
+    name: ADEOfAbstractWaterBoundarySurface
+    description: CityGML class from package WaterBody
+    abstract: true
+  ADEOfWaterBody:
+    name: ADEOfWaterBody
+    description: CityGML class from package WaterBody
+    abstract: true
+  ADEOfWaterGroundSurface:
+    name: ADEOfWaterGroundSurface
+    description: CityGML class from package WaterBody
+    abstract: true
+  ADEOfWaterSurface:
+    name: ADEOfWaterSurface
+    description: CityGML class from package WaterBody
+    abstract: true
+  AbstractConstruction:
+    name: AbstractConstruction
+    description: CityGML class from package Construction
+    is_a: AbstractOccupiedSpace
+    abstract: true
+    attributes:
+      conditionOfConstruction:
+        name: conditionOfConstruction
+        range: ConditionOfConstructionValue
+        required: false
+        multivalued: false
+      dateOfConstruction:
+        name: dateOfConstruction
+        range: date
+        required: false
+        multivalued: false
+      dateOfDemolition:
+        name: dateOfDemolition
+        range: date
+        required: false
+        multivalued: false
+      constructionEvent:
+        name: constructionEvent
+        range: ConstructionEvent
+        required: false
+        multivalued: true
+      elevation:
+        name: elevation
+        range: Elevation
+        required: false
+        multivalued: true
+      height:
+        name: height
+        range: Height
+        required: false
+        multivalued: true
+      occupancy:
+        name: occupancy
+        range: Occupancy
+        required: false
+        multivalued: true
+      adeOfAbstractConstruction:
+        name: adeOfAbstractConstruction
+        range: ADEOfAbstractConstruction
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+  AbstractConstructionSurface:
+    name: AbstractConstructionSurface
+    description: CityGML class from package Construction
+    is_a: AbstractThematicSurface
+    abstract: true
+    attributes:
+      adeOfAbstractConstructionSurface:
+        name: adeOfAbstractConstructionSurface
+        range: ADEOfAbstractConstructionSurface
+        required: false
+        multivalued: true
+      fillingSurface:
+        name: fillingSurface
+        range: AbstractFillingSurface
+        required: false
+        multivalued: true
+  AbstractConstructiveElement:
+    name: AbstractConstructiveElement
+    description: CityGML class from package Construction
+    is_a: AbstractOccupiedSpace
+    abstract: true
+    attributes:
+      isStructuralElement:
+        name: isStructuralElement
+        range: boolean
+        required: false
+        multivalued: false
+      adeOfAbstractConstructiveElement:
+        name: adeOfAbstractConstructiveElement
+        range: ADEOfAbstractConstructiveElement
+        required: false
+        multivalued: true
+      filling:
+        name: filling
+        range: AbstractFillingElement
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+  AbstractFillingElement:
+    name: AbstractFillingElement
+    description: CityGML class from package Construction
+    is_a: AbstractOccupiedSpace
+    abstract: true
+    attributes:
+      adeOfAbstractFillingElement:
+        name: adeOfAbstractFillingElement
+        range: ADEOfAbstractFillingElement
+        required: false
+        multivalued: true
+  AbstractFillingSurface:
+    name: AbstractFillingSurface
+    description: CityGML class from package Construction
+    is_a: AbstractThematicSurface
+    abstract: true
+    attributes:
+      adeOfAbstractFillingSurface:
+        name: adeOfAbstractFillingSurface
+        range: ADEOfAbstractFillingSurface
+        required: false
+        multivalued: true
+  AbstractFurniture:
+    name: AbstractFurniture
+    description: CityGML class from package Construction
+    is_a: AbstractOccupiedSpace
+    abstract: true
+    attributes:
+      adeOfAbstractFurniture:
+        name: adeOfAbstractFurniture
+        range: ADEOfAbstractFurniture
+        required: false
+        multivalued: true
+  AbstractInstallation:
+    name: AbstractInstallation
+    description: CityGML class from package Construction
+    is_a: AbstractOccupiedSpace
+    abstract: true
+    attributes:
+      relationToConstruction:
+        name: relationToConstruction
+        range: RelationToConstruction
+        required: false
+        multivalued: false
+      adeOfAbstractInstallation:
+        name: adeOfAbstractInstallation
+        range: ADEOfAbstractInstallation
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+  CeilingSurface:
+    name: CeilingSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfCeilingSurface:
+        name: adeOfCeilingSurface
+        range: ADEOfCeilingSurface
+        required: false
+        multivalued: true
+  Door:
+    name: Door
+    description: CityGML class from package Construction
+    is_a: AbstractFillingElement
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: DoorClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: DoorFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: DoorUsageValue
+        required: false
+        multivalued: true
+      adeOfDoor:
+        name: adeOfDoor
+        range: ADEOfDoor
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: DoorSurface
+        required: false
+        multivalued: true
+      address:
+        name: address
+        range: Address
+        required: false
+        multivalued: true
+  DoorClassValue:
+    name: DoorClassValue
+    description: CityGML class from package Construction
+    abstract: false
+  DoorFunctionValue:
+    name: DoorFunctionValue
+    description: CityGML class from package Construction
+    abstract: false
+  DoorSurface:
+    name: DoorSurface
+    description: CityGML class from package Construction
+    is_a: AbstractFillingSurface
+    abstract: false
+    attributes:
+      adeOfDoorSurface:
+        name: adeOfDoorSurface
+        range: ADEOfDoorSurface
+        required: false
+        multivalued: true
+      address:
+        name: address
+        range: Address
+        required: false
+        multivalued: true
+  DoorUsageValue:
+    name: DoorUsageValue
+    description: CityGML class from package Construction
+    abstract: false
+  ElevationReferenceValue:
+    name: ElevationReferenceValue
+    description: CityGML class from package Construction
+    abstract: false
+  EventValue:
+    name: EventValue
+    description: CityGML class from package Construction
+    abstract: false
+  FloorSurface:
+    name: FloorSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfFloorSurface:
+        name: adeOfFloorSurface
+        range: ADEOfFloorSurface
+        required: false
+        multivalued: true
+  GroundSurface:
+    name: GroundSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfGroundSurface:
+        name: adeOfGroundSurface
+        range: ADEOfGroundSurface
+        required: false
+        multivalued: true
+  InteriorWallSurface:
+    name: InteriorWallSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfInteriorWallSurface:
+        name: adeOfInteriorWallSurface
+        range: ADEOfInteriorWallSurface
+        required: false
+        multivalued: true
+  OtherConstruction:
+    name: OtherConstruction
+    description: CityGML class from package Construction
+    is_a: AbstractConstruction
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: OtherConstructionClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: OtherConstructionFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: OtherConstructionUsageValue
+        required: false
+        multivalued: true
+      adeOfOtherConstruction:
+        name: adeOfOtherConstruction
+        range: ADEOfOtherConstruction
+        required: false
+        multivalued: true
+  OtherConstructionClassValue:
+    name: OtherConstructionClassValue
+    description: CityGML class from package Construction
+    abstract: false
+  OtherConstructionFunctionValue:
+    name: OtherConstructionFunctionValue
+    description: CityGML class from package Construction
+    abstract: false
+  OtherConstructionUsageValue:
+    name: OtherConstructionUsageValue
+    description: CityGML class from package Construction
+    abstract: false
+  OuterCeilingSurface:
+    name: OuterCeilingSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfOuterCeilingSurface:
+        name: adeOfOuterCeilingSurface
+        range: ADEOfOuterCeilingSurface
+        required: false
+        multivalued: true
+  OuterFloorSurface:
+    name: OuterFloorSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfOuterFloorSurface:
+        name: adeOfOuterFloorSurface
+        range: ADEOfOuterFloorSurface
+        required: false
+        multivalued: true
+  RoofSurface:
+    name: RoofSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfRoofSurface:
+        name: adeOfRoofSurface
+        range: ADEOfRoofSurface
+        required: false
+        multivalued: true
+  WallSurface:
+    name: WallSurface
+    description: CityGML class from package Construction
+    is_a: AbstractConstructionSurface
+    abstract: false
+    attributes:
+      adeOfWallSurface:
+        name: adeOfWallSurface
+        range: ADEOfWallSurface
+        required: false
+        multivalued: true
+  Window:
+    name: Window
+    description: CityGML class from package Construction
+    is_a: AbstractFillingElement
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: WindowClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: WindowFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: WindowUsageValue
+        required: false
+        multivalued: true
+      adeOfWindow:
+        name: adeOfWindow
+        range: ADEOfWindow
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: WindowSurface
+        required: false
+        multivalued: true
+  WindowClassValue:
+    name: WindowClassValue
+    description: CityGML class from package Construction
+    abstract: false
+  WindowFunctionValue:
+    name: WindowFunctionValue
+    description: CityGML class from package Construction
+    abstract: false
+  WindowSurface:
+    name: WindowSurface
+    description: CityGML class from package Construction
+    is_a: AbstractFillingSurface
+    abstract: false
+    attributes:
+      adeOfWindowSurface:
+        name: adeOfWindowSurface
+        range: ADEOfWindowSurface
+        required: false
+        multivalued: true
+  WindowUsageValue:
+    name: WindowUsageValue
+    description: CityGML class from package Construction
+    abstract: false
+  AbstractAtomicTimeseries:
+    name: AbstractAtomicTimeseries
+    description: CityGML class from package Dynamizer
+    is_a: AbstractTimeseries
+    abstract: true
+    attributes:
+      observationProperty:
+        name: observationProperty
+        range: string
+        required: true
+        multivalued: false
+      uom:
+        name: uom
+        range: string
+        required: false
+        multivalued: false
+      adeOfAbstractAtomicTimeseries:
+        name: adeOfAbstractAtomicTimeseries
+        range: ADEOfAbstractAtomicTimeseries
+        required: false
+        multivalued: true
+  AbstractTimeseries:
+    name: AbstractTimeseries
+    description: CityGML class from package Dynamizer
+    is_a: AbstractFeature
+    abstract: true
+    attributes:
+      firstTimestamp:
+        name: firstTimestamp
+        range: string
+        required: false
+        multivalued: false
+      lastTimestamp:
+        name: lastTimestamp
+        range: string
+        required: false
+        multivalued: false
+      adeOfAbstractTimeseries:
+        name: adeOfAbstractTimeseries
+        range: ADEOfAbstractTimeseries
+        required: false
+        multivalued: true
+  AuthenticationTypeValue:
+    name: AuthenticationTypeValue
+    description: CityGML class from package Dynamizer
+    abstract: false
+  CompositeTimeseries:
+    name: CompositeTimeseries
+    description: CityGML class from package Dynamizer
+    is_a: AbstractTimeseries
+    abstract: false
+    attributes:
+      adeOfCompositeTimeseries:
+        name: adeOfCompositeTimeseries
+        range: ADEOfCompositeTimeseries
+        required: false
+        multivalued: true
+      component:
+        name: component
+        range: TimeseriesComponent
+        required: true
+        multivalued: true
+  Dynamizer:
+    name: Dynamizer
+    description: CityGML class from package Dynamizer
+    is_a: AbstractDynamizer
+    abstract: false
+    attributes:
+      attributeRef:
+        name: attributeRef
+        range: string
+        required: true
+        multivalued: false
+      startTime:
+        name: startTime
+        range: string
+        required: false
+        multivalued: false
+      endTime:
+        name: endTime
+        range: string
+        required: false
+        multivalued: false
+      adeOfDynamizer:
+        name: adeOfDynamizer
+        range: ADEOfDynamizer
+        required: false
+        multivalued: true
+      dynamicData:
+        name: dynamicData
+        range: AbstractTimeseries
+        required: false
+        multivalued: false
+      sensorConnection:
+        name: sensorConnection
+        range: SensorConnection
+        required: false
+        multivalued: false
+  GenericTimeseries:
+    name: GenericTimeseries
+    description: CityGML class from package Dynamizer
+    is_a: AbstractAtomicTimeseries
+    abstract: false
+    attributes:
+      valueType:
+        name: valueType
+        range: TimeseriesTypeValue
+        required: true
+        multivalued: false
+      adeOfGenericTimeseries:
+        name: adeOfGenericTimeseries
+        range: ADEOfGenericTimeseries
+        required: false
+        multivalued: true
+      timeValuePair:
+        name: timeValuePair
+        range: TimeValuePair
+        required: true
+        multivalued: true
+  SensorConnectionTypeValue:
+    name: SensorConnectionTypeValue
+    description: CityGML class from package Dynamizer
+    abstract: false
+  StandardFileTimeseries:
+    name: StandardFileTimeseries
+    description: CityGML class from package Dynamizer
+    is_a: AbstractAtomicTimeseries
+    abstract: false
+    attributes:
+      fileLocation:
+        name: fileLocation
+        range: uri
+        required: true
+        multivalued: false
+      fileType:
+        name: fileType
+        range: StandardFileTypeValue
+        required: true
+        multivalued: false
+      mimeType:
+        name: mimeType
+        range: MimeTypeValue
+        required: false
+        multivalued: false
+      adeOfStandardFileTimeseries:
+        name: adeOfStandardFileTimeseries
+        range: ADEOfStandardFileTimeseries
+        required: false
+        multivalued: true
+  StandardFileTypeValue:
+    name: StandardFileTypeValue
+    description: CityGML class from package Dynamizer
+    abstract: false
+  TabulatedFileTimeseries:
+    name: TabulatedFileTimeseries
+    description: CityGML class from package Dynamizer
+    is_a: AbstractAtomicTimeseries
+    abstract: false
+    attributes:
+      fileLocation:
+        name: fileLocation
+        range: uri
+        required: true
+        multivalued: false
+      fileType:
+        name: fileType
+        range: TabulatedFileTypeValue
+        required: true
+        multivalued: false
+      mimeType:
+        name: mimeType
+        range: MimeTypeValue
+        required: false
+        multivalued: false
+      valueType:
+        name: valueType
+        range: TimeseriesTypeValue
+        required: true
+        multivalued: false
+      numberOfHeaderLines:
+        name: numberOfHeaderLines
+        range: integer
+        required: false
+        multivalued: false
+      fieldSeparator:
+        name: fieldSeparator
+        range: string
+        required: true
+        multivalued: false
+      decimalSymbol:
+        name: decimalSymbol
+        range: string
+        required: false
+        multivalued: false
+      idColumnNo:
+        name: idColumnNo
+        range: integer
+        required: false
+        multivalued: false
+      idColumnName:
+        name: idColumnName
+        range: string
+        required: false
+        multivalued: false
+      idValue:
+        name: idValue
+        range: string
+        required: false
+        multivalued: false
+      timeColumnNo:
+        name: timeColumnNo
+        range: integer
+        required: false
+        multivalued: false
+      timeColumnName:
+        name: timeColumnName
+        range: string
+        required: false
+        multivalued: false
+      valueColumnNo:
+        name: valueColumnNo
+        range: integer
+        required: false
+        multivalued: false
+      valueColumnName:
+        name: valueColumnName
+        range: string
+        required: false
+        multivalued: false
+      adeOfTabulatedFileTimeseries:
+        name: adeOfTabulatedFileTimeseries
+        range: ADEOfTabulatedFileTimeseries
+        required: false
+        multivalued: true
+  TabulatedFileTypeValue:
+    name: TabulatedFileTypeValue
+    description: CityGML class from package Dynamizer
+    abstract: false
+  PointCloud:
+    name: PointCloud
+    description: CityGML class from package PointCloud
+    is_a: AbstractPointCloud
+    abstract: false
+    attributes:
+      mimeType:
+        name: mimeType
+        range: MimeTypeValue
+        required: false
+        multivalued: false
+      pointFile:
+        name: pointFile
+        range: uri
+        required: false
+        multivalued: false
+      pointFileSrsName:
+        name: pointFileSrsName
+        range: string
+        required: false
+        multivalued: false
+      adeOfPointCloud:
+        name: adeOfPointCloud
+        range: ADEOfPointCloud
+        required: false
+        multivalued: true
+      points:
+        name: points
+        range: string
+        required: false
+        multivalued: false
+  Version:
+    name: Version
+    description: CityGML class from package Versioning
+    is_a: AbstractVersion
+    abstract: false
+    attributes:
+      tag:
+        name: tag
+        range: string
+        required: false
+        multivalued: true
+      adeOfVersion:
+        name: adeOfVersion
+        range: ADEOfVersion
+        required: false
+        multivalued: true
+      versionMember:
+        name: versionMember
+        range: AbstractFeatureWithLifespan
+        required: false
+        multivalued: true
+  VersionTransition:
+    name: VersionTransition
+    description: CityGML class from package Versioning
+    is_a: AbstractVersionTransition
+    abstract: false
+    attributes:
+      reason:
+        name: reason
+        range: string
+        required: false
+        multivalued: false
+      clonePredecessor:
+        name: clonePredecessor
+        range: boolean
+        required: true
+        multivalued: false
+      type:
+        name: type
+        range: TransitionTypeValue
+        required: false
+        multivalued: false
+      adeOfVersionTransition:
+        name: adeOfVersionTransition
+        range: ADEOfVersionTransition
+        required: false
+        multivalued: true
+      from:
+        name: from
+        range: Version
+        required: false
+        multivalued: false
+      to:
+        name: to
+        range: Version
+        required: false
+        multivalued: false
+      transaction:
+        name: transaction
+        range: Transaction
+        required: false
+        multivalued: true
+  AbstractSurfaceData:
+    name: AbstractSurfaceData
+    description: CityGML class from package Appearance
+    is_a: AbstractFeature
+    abstract: true
+    attributes:
+      isFront:
+        name: isFront
+        range: boolean
+        required: false
+        multivalued: false
+      adeOfAbstractSurfaceData:
+        name: adeOfAbstractSurfaceData
+        range: ADEOfAbstractSurfaceData
+        required: false
+        multivalued: true
+  AbstractTexture:
+    name: AbstractTexture
+    description: CityGML class from package Appearance
+    is_a: AbstractSurfaceData
+    abstract: true
+    attributes:
+      imageURI:
+        name: imageURI
+        range: uri
+        required: true
+        multivalued: false
+      mimeType:
+        name: mimeType
+        range: MimeTypeValue
+        required: false
+        multivalued: false
+      textureType:
+        name: textureType
+        range: TextureType
+        required: false
+        multivalued: false
+      wrapMode:
+        name: wrapMode
+        range: WrapMode
+        required: false
+        multivalued: false
+      borderColor:
+        name: borderColor
+        range: ColorPlusOpacity
+        required: false
+        multivalued: false
+      adeOfAbstractTexture:
+        name: adeOfAbstractTexture
+        range: ADEOfAbstractTexture
+        required: false
+        multivalued: true
+  Appearance:
+    name: Appearance
+    description: CityGML class from package Appearance
+    is_a: AbstractAppearance
+    abstract: false
+    attributes:
+      theme:
+        name: theme
+        range: string
+        required: false
+        multivalued: false
+      adeOfAppearance:
+        name: adeOfAppearance
+        range: ADEOfAppearance
+        required: false
+        multivalued: true
+      surfaceData:
+        name: surfaceData
+        range: AbstractSurfaceData
+        required: false
+        multivalued: true
+  Color:
+    name: Color
+    description: CityGML class from package Appearance
+    is_a: DoubleBetween0and1List
+    abstract: false
+  ColorPlusOpacity:
+    name: ColorPlusOpacity
+    description: CityGML class from package Appearance
+    is_a: DoubleBetween0and1List
+    abstract: false
+  GeoreferencedTexture:
+    name: GeoreferencedTexture
+    description: CityGML class from package Appearance
+    is_a: AbstractTexture
+    abstract: false
+    attributes:
+      preferWorldFile:
+        name: preferWorldFile
+        range: boolean
+        required: false
+        multivalued: false
+      orientation:
+        name: orientation
+        range: TransformationMatrix2x2
+        required: false
+        multivalued: false
+      target:
+        name: target
+        range: uri
+        required: false
+        multivalued: true
+      adeOfGeoreferencedTexture:
+        name: adeOfGeoreferencedTexture
+        range: ADEOfGeoreferencedTexture
+        required: false
+        multivalued: true
+      referencePoint:
+        name: referencePoint
+        range: string
+        required: false
+        multivalued: false
+  ParameterizedTexture:
+    name: ParameterizedTexture
+    description: CityGML class from package Appearance
+    is_a: AbstractTexture
+    abstract: false
+    attributes:
+      adeOfParameterizedTexture:
+        name: adeOfParameterizedTexture
+        range: ADEOfParameterizedTexture
+        required: false
+        multivalued: true
+      textureParameterization:
+        name: textureParameterization
+        range: AbstractTextureParameterization
+        required: false
+        multivalued: true
+  X3DMaterial:
+    name: X3DMaterial
+    description: CityGML class from package Appearance
+    is_a: AbstractSurfaceData
+    abstract: false
+    attributes:
+      ambientIntensity:
+        name: ambientIntensity
+        range: DoubleBetween0and1
+        required: false
+        multivalued: false
+      diffuseColor:
+        name: diffuseColor
+        range: Color
+        required: false
+        multivalued: false
+      emissiveColor:
+        name: emissiveColor
+        range: Color
+        required: false
+        multivalued: false
+      specularColor:
+        name: specularColor
+        range: Color
+        required: false
+        multivalued: false
+      shininess:
+        name: shininess
+        range: DoubleBetween0and1
+        required: false
+        multivalued: false
+      transparency:
+        name: transparency
+        range: DoubleBetween0and1
+        required: false
+        multivalued: false
+      isSmooth:
+        name: isSmooth
+        range: boolean
+        required: false
+        multivalued: false
+      target:
+        name: target
+        range: uri
+        required: false
+        multivalued: true
+      adeOfX3DMaterial:
+        name: adeOfX3DMaterial
+        range: ADEOfX3DMaterial
+        required: false
+        multivalued: true
+  AbstractBridge:
+    name: AbstractBridge
+    description: CityGML class from package Bridge
+    is_a: AbstractConstruction
+    abstract: true
+    attributes:
+      class:
+        name: class
+        range: BridgeClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BridgeFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BridgeUsageValue
+        required: false
+        multivalued: true
+      isMovable:
+        name: isMovable
+        range: boolean
+        required: false
+        multivalued: false
+      adeOfAbstractBridge:
+        name: adeOfAbstractBridge
+        range: ADEOfAbstractBridge
+        required: false
+        multivalued: true
+      bridgeRoom:
+        name: bridgeRoom
+        range: BridgeRoom
+        required: false
+        multivalued: true
+      bridgeFurniture:
+        name: bridgeFurniture
+        range: BridgeFurniture
+        required: false
+        multivalued: true
+      bridgeConstructiveElement:
+        name: bridgeConstructiveElement
+        range: BridgeConstructiveElement
+        required: false
+        multivalued: true
+      address:
+        name: address
+        range: Address
+        required: false
+        multivalued: true
+      bridgeInstallation:
+        name: bridgeInstallation
+        range: BridgeInstallation
+        required: false
+        multivalued: true
+  Bridge:
+    name: Bridge
+    description: CityGML class from package Bridge
+    is_a: AbstractBridge
+    abstract: false
+    attributes:
+      adeOfBridge:
+        name: adeOfBridge
+        range: ADEOfBridge
+        required: false
+        multivalued: true
+      bridgePart:
+        name: bridgePart
+        range: BridgePart
+        required: false
+        multivalued: true
+  BridgeClassValue:
+    name: BridgeClassValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeConstructiveElement:
+    name: BridgeConstructiveElement
+    description: CityGML class from package Bridge
+    is_a: AbstractConstructiveElement
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BridgeConstructiveElementClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BridgeConstructiveElementFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BridgeConstructiveElementUsageValue
+        required: false
+        multivalued: true
+      adeOfBridgeConstructiveElement:
+        name: adeOfBridgeConstructiveElement
+        range: ADEOfBridgeConstructiveElement
+        required: false
+        multivalued: true
+  BridgeConstructiveElementClassValue:
+    name: BridgeConstructiveElementClassValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeConstructiveElementFunctionValue:
+    name: BridgeConstructiveElementFunctionValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeConstructiveElementUsageValue:
+    name: BridgeConstructiveElementUsageValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeFunctionValue:
+    name: BridgeFunctionValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeFurniture:
+    name: BridgeFurniture
+    description: CityGML class from package Bridge
+    is_a: AbstractFurniture
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BridgeFurnitureClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BridgeFurnitureFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BridgeFurnitureUsageValue
+        required: false
+        multivalued: true
+      adeOfBridgeFurniture:
+        name: adeOfBridgeFurniture
+        range: ADEOfBridgeFurniture
+        required: false
+        multivalued: true
+  BridgeFurnitureClassValue:
+    name: BridgeFurnitureClassValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeFurnitureFunctionValue:
+    name: BridgeFurnitureFunctionValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeFurnitureUsageValue:
+    name: BridgeFurnitureUsageValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeInstallation:
+    name: BridgeInstallation
+    description: CityGML class from package Bridge
+    is_a: AbstractInstallation
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BridgeInstallationClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BridgeInstallationFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BridgeInstallationUsageValue
+        required: false
+        multivalued: true
+      adeOfBridgeInstallation:
+        name: adeOfBridgeInstallation
+        range: ADEOfBridgeInstallation
+        required: false
+        multivalued: true
+  BridgeInstallationClassValue:
+    name: BridgeInstallationClassValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeInstallationFunctionValue:
+    name: BridgeInstallationFunctionValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeInstallationUsageValue:
+    name: BridgeInstallationUsageValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgePart:
+    name: BridgePart
+    description: CityGML class from package Bridge
+    is_a: AbstractBridge
+    abstract: false
+    attributes:
+      adeOfBridgePart:
+        name: adeOfBridgePart
+        range: ADEOfBridgePart
+        required: false
+        multivalued: true
+  BridgeRoom:
+    name: BridgeRoom
+    description: CityGML class from package Bridge
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BridgeRoomClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BridgeRoomFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BridgeRoomUsageValue
+        required: false
+        multivalued: true
+      adeOfBridgeRoom:
+        name: adeOfBridgeRoom
+        range: ADEOfBridgeRoom
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+      bridgeInstallation:
+        name: bridgeInstallation
+        range: BridgeInstallation
+        required: false
+        multivalued: true
+      bridgeFurniture:
+        name: bridgeFurniture
+        range: BridgeFurniture
+        required: false
+        multivalued: true
+  BridgeRoomClassValue:
+    name: BridgeRoomClassValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeRoomFunctionValue:
+    name: BridgeRoomFunctionValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeRoomUsageValue:
+    name: BridgeRoomUsageValue
+    description: CityGML class from package Bridge
+    abstract: false
+  BridgeUsageValue:
+    name: BridgeUsageValue
+    description: CityGML class from package Bridge
+    abstract: false
+  AbstractBuilding:
+    name: AbstractBuilding
+    description: CityGML class from package Building
+    is_a: AbstractConstruction
+    abstract: true
+    attributes:
+      class:
+        name: class
+        range: BuildingClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BuildingFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BuildingUsageValue
+        required: false
+        multivalued: true
+      roofType:
+        name: roofType
+        range: RoofTypeValue
+        required: false
+        multivalued: false
+      storeysAboveGround:
+        name: storeysAboveGround
+        range: integer
+        required: false
+        multivalued: false
+      storeysBelowGround:
+        name: storeysBelowGround
+        range: integer
+        required: false
+        multivalued: false
+      storeyHeightsAboveGround:
+        name: storeyHeightsAboveGround
+        range: string
+        required: false
+        multivalued: false
+      storeyHeightsBelowGround:
+        name: storeyHeightsBelowGround
+        range: string
+        required: false
+        multivalued: false
+      adeOfAbstractBuilding:
+        name: adeOfAbstractBuilding
+        range: ADEOfAbstractBuilding
+        required: false
+        multivalued: true
+      buildingInstallation:
+        name: buildingInstallation
+        range: BuildingInstallation
+        required: false
+        multivalued: true
+      buildingFurniture:
+        name: buildingFurniture
+        range: BuildingFurniture
+        required: false
+        multivalued: true
+      buildingConstructiveElement:
+        name: buildingConstructiveElement
+        range: BuildingConstructiveElement
+        required: false
+        multivalued: true
+      address:
+        name: address
+        range: Address
+        required: false
+        multivalued: true
+      buildingRoom:
+        name: buildingRoom
+        range: BuildingRoom
+        required: false
+        multivalued: true
+      buildingSubdivision:
+        name: buildingSubdivision
+        range: AbstractBuildingSubdivision
+        required: false
+        multivalued: true
+  AbstractBuildingSubdivision:
+    name: AbstractBuildingSubdivision
+    description: CityGML class from package Building
+    is_a: AbstractLogicalSpace
+    abstract: true
+    attributes:
+      class:
+        name: class
+        range: BuildingSubdivisionClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BuildingSubdivisionFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BuildingSubdivisionUsageValue
+        required: false
+        multivalued: true
+      elevation:
+        name: elevation
+        range: Elevation
+        required: false
+        multivalued: true
+      sortKey:
+        name: sortKey
+        range: float
+        required: false
+        multivalued: false
+      adeOfAbstractBuildingSubdivision:
+        name: adeOfAbstractBuildingSubdivision
+        range: ADEOfAbstractBuildingSubdivision
+        required: false
+        multivalued: true
+      buildingFurniture:
+        name: buildingFurniture
+        range: BuildingFurniture
+        required: false
+        multivalued: true
+      buildingConstructiveElement:
+        name: buildingConstructiveElement
+        range: BuildingConstructiveElement
+        required: false
+        multivalued: true
+      buildingInstallation:
+        name: buildingInstallation
+        range: BuildingInstallation
+        required: false
+        multivalued: true
+      buildingRoom:
+        name: buildingRoom
+        range: BuildingRoom
+        required: false
+        multivalued: true
+  Building:
+    name: Building
+    description: CityGML class from package Building
+    is_a: AbstractBuilding
+    abstract: false
+    attributes:
+      adeOfBuilding:
+        name: adeOfBuilding
+        range: ADEOfBuilding
+        required: false
+        multivalued: true
+      buildingPart:
+        name: buildingPart
+        range: BuildingPart
+        required: false
+        multivalued: true
+  BuildingClassValue:
+    name: BuildingClassValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingConstructiveElement:
+    name: BuildingConstructiveElement
+    description: CityGML class from package Building
+    is_a: AbstractConstructiveElement
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BuildingConstructiveElementClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BuildingConstructiveElementFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BuildingConstructiveElementUsageValue
+        required: false
+        multivalued: true
+      adeOfBuildingConstructiveElement:
+        name: adeOfBuildingConstructiveElement
+        range: ADEOfBuildingConstructiveElement
+        required: false
+        multivalued: true
+  BuildingConstructiveElementClassValue:
+    name: BuildingConstructiveElementClassValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingConstructiveElementFunctionValue:
+    name: BuildingConstructiveElementFunctionValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingConstructiveElementUsageValue:
+    name: BuildingConstructiveElementUsageValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingFunctionValue:
+    name: BuildingFunctionValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingFurniture:
+    name: BuildingFurniture
+    description: CityGML class from package Building
+    is_a: AbstractFurniture
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BuildingFurnitureClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BuildingFurnitureFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BuildingFurnitureUsageValue
+        required: false
+        multivalued: true
+      adeOfBuildingFurniture:
+        name: adeOfBuildingFurniture
+        range: ADEOfBuildingFurniture
+        required: false
+        multivalued: true
+  BuildingFurnitureClassValue:
+    name: BuildingFurnitureClassValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingFurnitureFunctionValue:
+    name: BuildingFurnitureFunctionValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingFurnitureUsageValue:
+    name: BuildingFurnitureUsageValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingInstallation:
+    name: BuildingInstallation
+    description: CityGML class from package Building
+    is_a: AbstractInstallation
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BuildingInstallationClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BuildingInstallationFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BuildingInstallationUsageValue
+        required: false
+        multivalued: true
+      adeOfBuildingInstallation:
+        name: adeOfBuildingInstallation
+        range: ADEOfBuildingInstallation
+        required: false
+        multivalued: true
+  BuildingInstallationClassValue:
+    name: BuildingInstallationClassValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingInstallationFunctionValue:
+    name: BuildingInstallationFunctionValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingInstallationUsageValue:
+    name: BuildingInstallationUsageValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingPart:
+    name: BuildingPart
+    description: CityGML class from package Building
+    is_a: AbstractBuilding
+    abstract: false
+    attributes:
+      adeOfBuildingPart:
+        name: adeOfBuildingPart
+        range: ADEOfBuildingPart
+        required: false
+        multivalued: true
+  BuildingRoom:
+    name: BuildingRoom
+    description: CityGML class from package Building
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: BuildingRoomClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: BuildingRoomFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: BuildingRoomUsageValue
+        required: false
+        multivalued: true
+      roomHeight:
+        name: roomHeight
+        range: RoomHeight
+        required: false
+        multivalued: true
+      adeOfBuildingRoom:
+        name: adeOfBuildingRoom
+        range: ADEOfBuildingRoom
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+      buildingFurniture:
+        name: buildingFurniture
+        range: BuildingFurniture
+        required: false
+        multivalued: true
+      buildingInstallation:
+        name: buildingInstallation
+        range: BuildingInstallation
+        required: false
+        multivalued: true
+  BuildingRoomClassValue:
+    name: BuildingRoomClassValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingRoomFunctionValue:
+    name: BuildingRoomFunctionValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingRoomUsageValue:
+    name: BuildingRoomUsageValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingSubdivisionClassValue:
+    name: BuildingSubdivisionClassValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingSubdivisionFunctionValue:
+    name: BuildingSubdivisionFunctionValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingSubdivisionUsageValue:
+    name: BuildingSubdivisionUsageValue
+    description: CityGML class from package Building
+    abstract: false
+  BuildingUnit:
+    name: BuildingUnit
+    description: CityGML class from package Building
+    is_a: AbstractBuildingSubdivision
+    abstract: false
+    attributes:
+      adeOfBuildingUnit:
+        name: adeOfBuildingUnit
+        range: ADEOfBuildingUnit
+        required: false
+        multivalued: true
+      address:
+        name: address
+        range: Address
+        required: false
+        multivalued: true
+      storey:
+        name: storey
+        range: Storey
+        required: false
+        multivalued: true
+  BuildingUsageValue:
+    name: BuildingUsageValue
+    description: CityGML class from package Building
+    abstract: false
+  RoofTypeValue:
+    name: RoofTypeValue
+    description: CityGML class from package Building
+    abstract: false
+  RoomElevationReferenceValue:
+    name: RoomElevationReferenceValue
+    description: CityGML class from package Building
+    abstract: false
+  Storey:
+    name: Storey
+    description: CityGML class from package Building
+    is_a: AbstractBuildingSubdivision
+    abstract: false
+    attributes:
+      adeOfStorey:
+        name: adeOfStorey
+        range: ADEOfStorey
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+      buildingUnit:
+        name: buildingUnit
+        range: BuildingUnit
+        required: false
+        multivalued: true
+  CityFurniture:
+    name: CityFurniture
+    description: CityGML class from package CityFurniture
+    is_a: AbstractOccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: CityFurnitureClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: CityFurnitureFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: CityFurnitureUsageValue
+        required: false
+        multivalued: true
+      adeOfCityFurniture:
+        name: adeOfCityFurniture
+        range: ADEOfCityFurniture
+        required: false
+        multivalued: true
+  CityFurnitureClassValue:
+    name: CityFurnitureClassValue
+    description: CityGML class from package CityFurniture
+    abstract: false
+  CityFurnitureFunctionValue:
+    name: CityFurnitureFunctionValue
+    description: CityGML class from package CityFurniture
+    abstract: false
+  CityFurnitureUsageValue:
+    name: CityFurnitureUsageValue
+    description: CityGML class from package CityFurniture
+    abstract: false
+  CityObjectGroup:
+    name: CityObjectGroup
+    description: CityGML class from package CityObjectGroup
+    is_a: AbstractLogicalSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: CityObjectGroupClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: CityObjectGroupFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: CityObjectGroupUsageValue
+        required: false
+        multivalued: true
+      adeOfCityObjectGroup:
+        name: adeOfCityObjectGroup
+        range: ADEOfCityObjectGroup
+        required: false
+        multivalued: true
+      parent:
+        name: parent
+        range: AbstractCityObject
+        required: false
+        multivalued: false
+      groupMember:
+        name: groupMember
+        range: AbstractCityObject
+        required: false
+        multivalued: true
+  CityObjectGroupClassValue:
+    name: CityObjectGroupClassValue
+    description: CityGML class from package CityObjectGroup
+    abstract: false
+  CityObjectGroupFunctionValue:
+    name: CityObjectGroupFunctionValue
+    description: CityGML class from package CityObjectGroup
+    abstract: false
+  CityObjectGroupUsageValue:
+    name: CityObjectGroupUsageValue
+    description: CityGML class from package CityObjectGroup
+    abstract: false
+  AbstractAppearance:
+    name: AbstractAppearance
+    description: CityGML class from package Core
+    is_a: AbstractFeatureWithLifespan
+    abstract: true
+    attributes:
+      adeOfAbstractAppearance:
+        name: adeOfAbstractAppearance
+        range: ADEOfAbstractAppearance
+        required: false
+        multivalued: true
+  AbstractCityObject:
+    name: AbstractCityObject
+    description: CityGML class from package Core
+    is_a: AbstractFeatureWithLifespan
+    abstract: true
+    attributes:
+      relativeToTerrain:
+        name: relativeToTerrain
+        range: RelativeToTerrain
+        required: false
+        multivalued: false
+      relativeToWater:
+        name: relativeToWater
+        range: RelativeToWater
+        required: false
+        multivalued: false
+      adeOfAbstractCityObject:
+        name: adeOfAbstractCityObject
+        range: ADEOfAbstractCityObject
+        required: false
+        multivalued: true
+      appearance:
+        name: appearance
+        range: AbstractAppearance
+        required: false
+        multivalued: true
+      genericAttribute:
+        name: genericAttribute
+        range: AbstractGenericAttribute
+        required: false
+        multivalued: true
+      generalizesTo:
+        name: generalizesTo
+        range: AbstractCityObject
+        required: false
+        multivalued: true
+      externalReference:
+        name: externalReference
+        range: ExternalReference
+        required: false
+        multivalued: true
+      relatedTo:
+        name: relatedTo
+        range: AbstractCityObject
+        required: false
+        multivalued: true
+      dynamizer:
+        name: dynamizer
+        range: AbstractDynamizer
+        required: false
+        multivalued: true
+  AbstractDynamizer:
+    name: AbstractDynamizer
+    description: CityGML class from package Core
+    is_a: AbstractFeatureWithLifespan
+    abstract: true
+    attributes:
+      adeOfAbstractDynamizer:
+        name: adeOfAbstractDynamizer
+        range: ADEOfAbstractDynamizer
+        required: false
+        multivalued: true
+  AbstractFeature:
+    name: AbstractFeature
+    description: CityGML class from package Core
+    abstract: true
+    attributes:
+      featureID:
+        name: featureID
+        range: ID
+        required: true
+        multivalued: false
+      identifier:
+        name: identifier
+        range: string
+        required: false
+        multivalued: false
+      name:
+        name: name
+        range: string
+        required: false
+        multivalued: true
+      description:
+        name: description
+        range: string
+        required: false
+        multivalued: false
+      adeOfAbstractFeature:
+        name: adeOfAbstractFeature
+        range: ADEOfAbstractFeature
+        required: false
+        multivalued: true
+  AbstractFeatureWithLifespan:
+    name: AbstractFeatureWithLifespan
+    description: CityGML class from package Core
+    is_a: AbstractFeature
+    abstract: true
+    attributes:
+      creationDate:
+        name: creationDate
+        range: datetime
+        required: false
+        multivalued: false
+      terminationDate:
+        name: terminationDate
+        range: datetime
+        required: false
+        multivalued: false
+      validFrom:
+        name: validFrom
+        range: datetime
+        required: false
+        multivalued: false
+      validTo:
+        name: validTo
+        range: datetime
+        required: false
+        multivalued: false
+      adeOfAbstractFeatureWithLifespan:
+        name: adeOfAbstractFeatureWithLifespan
+        range: ADEOfAbstractFeatureWithLifespan
+        required: false
+        multivalued: true
+  AbstractLogicalSpace:
+    name: AbstractLogicalSpace
+    description: CityGML class from package Core
+    is_a: AbstractSpace
+    abstract: true
+    attributes:
+      adeOfAbstractLogicalSpace:
+        name: adeOfAbstractLogicalSpace
+        range: ADEOfAbstractLogicalSpace
+        required: false
+        multivalued: true
+  AbstractOccupiedSpace:
+    name: AbstractOccupiedSpace
+    description: CityGML class from package Core
+    is_a: AbstractPhysicalSpace
+    abstract: true
+    attributes:
+      adeOfAbstractOccupiedSpace:
+        name: adeOfAbstractOccupiedSpace
+        range: ADEOfAbstractOccupiedSpace
+        required: false
+        multivalued: true
+      lod3ImplicitRepresentation:
+        name: lod3ImplicitRepresentation
+        range: ImplicitGeometry
+        required: false
+        multivalued: false
+      lod2ImplicitRepresentation:
+        name: lod2ImplicitRepresentation
+        range: ImplicitGeometry
+        required: false
+        multivalued: false
+      lod1ImplicitRepresentation:
+        name: lod1ImplicitRepresentation
+        range: ImplicitGeometry
+        required: false
+        multivalued: false
+  AbstractPhysicalSpace:
+    name: AbstractPhysicalSpace
+    description: CityGML class from package Core
+    is_a: AbstractSpace
+    abstract: true
+    attributes:
+      adeOfAbstractPhysicalSpace:
+        name: adeOfAbstractPhysicalSpace
+        range: ADEOfAbstractPhysicalSpace
+        required: false
+        multivalued: true
+      lod3TerrainIntersectionCurve:
+        name: lod3TerrainIntersectionCurve
+        range: string
+        required: false
+        multivalued: false
+      pointCloud:
+        name: pointCloud
+        range: AbstractPointCloud
+        required: false
+        multivalued: false
+      lod1TerrainIntersectionCurve:
+        name: lod1TerrainIntersectionCurve
+        range: string
+        required: false
+        multivalued: false
+      lod2TerrainIntersectionCurve:
+        name: lod2TerrainIntersectionCurve
+        range: string
+        required: false
+        multivalued: false
+  AbstractPointCloud:
+    name: AbstractPointCloud
+    description: CityGML class from package Core
+    is_a: AbstractFeature
+    abstract: true
+    attributes:
+      adeOfAbstractPointCloud:
+        name: adeOfAbstractPointCloud
+        range: ADEOfAbstractPointCloud
+        required: false
+        multivalued: true
+  AbstractSpace:
+    name: AbstractSpace
+    description: CityGML class from package Core
+    is_a: AbstractCityObject
+    abstract: true
+    attributes:
+      spaceType:
+        name: spaceType
+        range: SpaceType
+        required: false
+        multivalued: false
+      volume:
+        name: volume
+        range: QualifiedVolume
+        required: false
+        multivalued: true
+      area:
+        name: area
+        range: QualifiedArea
+        required: false
+        multivalued: true
+      adeOfAbstractSpace:
+        name: adeOfAbstractSpace
+        range: ADEOfAbstractSpace
+        required: false
+        multivalued: true
+      lod2MultiCurve:
+        name: lod2MultiCurve
+        range: string
+        required: false
+        multivalued: false
+      lod3MultiSurface:
+        name: lod3MultiSurface
+        range: string
+        required: false
+        multivalued: false
+      lod0MultiSurface:
+        name: lod0MultiSurface
+        range: string
+        required: false
+        multivalued: false
+      lod1Solid:
+        name: lod1Solid
+        range: string
+        required: false
+        multivalued: false
+      lod3Solid:
+        name: lod3Solid
+        range: string
+        required: false
+        multivalued: false
+      boundary:
+        name: boundary
+        range: AbstractSpaceBoundary
+        required: false
+        multivalued: true
+      lod0MultiCurve:
+        name: lod0MultiCurve
+        range: string
+        required: false
+        multivalued: false
+      lod2Solid:
+        name: lod2Solid
+        range: string
+        required: false
+        multivalued: false
+      lod0Point:
+        name: lod0Point
+        range: string
+        required: false
+        multivalued: false
+      lod3MultiCurve:
+        name: lod3MultiCurve
+        range: string
+        required: false
+        multivalued: false
+      lod2MultiSurface:
+        name: lod2MultiSurface
+        range: string
+        required: false
+        multivalued: false
+  AbstractSpaceBoundary:
+    name: AbstractSpaceBoundary
+    description: CityGML class from package Core
+    is_a: AbstractCityObject
+    abstract: true
+    attributes:
+      adeOfAbstractSpaceBoundary:
+        name: adeOfAbstractSpaceBoundary
+        range: ADEOfAbstractSpaceBoundary
+        required: false
+        multivalued: true
+  AbstractThematicSurface:
+    name: AbstractThematicSurface
+    description: CityGML class from package Core
+    is_a: AbstractSpaceBoundary
+    abstract: true
+    attributes:
+      area:
+        name: area
+        range: QualifiedArea
+        required: false
+        multivalued: true
+      adeOfAbstractThematicSurface:
+        name: adeOfAbstractThematicSurface
+        range: ADEOfAbstractThematicSurface
+        required: false
+        multivalued: true
+      lod3MultiSurface:
+        name: lod3MultiSurface
+        range: string
+        required: false
+        multivalued: false
+      lod2MultiSurface:
+        name: lod2MultiSurface
+        range: string
+        required: false
+        multivalued: false
+      pointCloud:
+        name: pointCloud
+        range: AbstractPointCloud
+        required: false
+        multivalued: false
+      lod0MultiCurve:
+        name: lod0MultiCurve
+        range: string
+        required: false
+        multivalued: false
+      lod0MultiSurface:
+        name: lod0MultiSurface
+        range: string
+        required: false
+        multivalued: false
+      lod1MultiSurface:
+        name: lod1MultiSurface
+        range: string
+        required: false
+        multivalued: false
+  AbstractUnoccupiedSpace:
+    name: AbstractUnoccupiedSpace
+    description: CityGML class from package Core
+    is_a: AbstractPhysicalSpace
+    abstract: true
+    attributes:
+      adeOfAbstractUnoccupiedSpace:
+        name: adeOfAbstractUnoccupiedSpace
+        range: ADEOfAbstractUnoccupiedSpace
+        required: false
+        multivalued: true
+  AbstractVersion:
+    name: AbstractVersion
+    description: CityGML class from package Core
+    is_a: AbstractFeatureWithLifespan
+    abstract: true
+    attributes:
+      adeOfAbstractVersion:
+        name: adeOfAbstractVersion
+        range: ADEOfAbstractVersion
+        required: false
+        multivalued: true
+  AbstractVersionTransition:
+    name: AbstractVersionTransition
+    description: CityGML class from package Core
+    is_a: AbstractFeatureWithLifespan
+    abstract: true
+    attributes:
+      adeOfAbstractVersionTransition:
+        name: adeOfAbstractVersionTransition
+        range: ADEOfAbstractVersionTransition
+        required: false
+        multivalued: true
+  Address:
+    name: Address
+    description: CityGML class from package Core
+    is_a: AbstractFeature
+    abstract: false
+    attributes:
+      adeOfAddress:
+        name: adeOfAddress
+        range: ADEOfAddress
+        required: false
+        multivalued: true
+      multiPoint:
+        name: multiPoint
+        range: string
+        required: false
+        multivalued: false
+      xalAddress:
+        name: xalAddress
+        range: XALAddress
+        required: true
+        multivalued: false
+  CityModel:
+    name: CityModel
+    description: CityGML class from package Core
+    is_a: AbstractFeatureWithLifespan
+    abstract: false
+    attributes:
+      engineeringCRS:
+        name: engineeringCRS
+        range: string
+        required: false
+        multivalued: false
+      adeOfCityModel:
+        name: adeOfCityModel
+        range: ADEOfCityModel
+        required: false
+        multivalued: true
+      cityModelMember:
+        name: cityModelMember
+        range: CityModelMember
+        required: false
+        multivalued: true
+  ClosureSurface:
+    name: ClosureSurface
+    description: CityGML class from package Core
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      adeOfClosureSurface:
+        name: adeOfClosureSurface
+        range: ADEOfClosureSurface
+        required: false
+        multivalued: true
+  Code:
+    name: Code
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      codeSpace:
+        name: codeSpace
+        range: uri
+        required: false
+        multivalued: false
+  DoubleBetween0and1:
+    name: DoubleBetween0and1
+    description: CityGML class from package Core
+    abstract: false
+  DoubleBetween0and1List:
+    name: DoubleBetween0and1List
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      list:
+        name: list
+        range: DoubleBetween0and1
+        required: true
+        multivalued: false
+  DoubleList:
+    name: DoubleList
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      list:
+        name: list
+        range: float
+        required: true
+        multivalued: false
+  DoubleOrNilReasonList:
+    name: DoubleOrNilReasonList
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      list:
+        name: list
+        range: DoubleOrNilReason
+        required: true
+        multivalued: false
+  ID:
+    name: ID
+    description: CityGML class from package Core
+    abstract: false
+  ImplicitGeometry:
+    name: ImplicitGeometry
+    description: CityGML class from package Core
+    abstract: false
+    attributes:
+      objectID:
+        name: objectID
+        range: ID
+        required: true
+        multivalued: false
+      transformationMatrix:
+        name: transformationMatrix
+        range: TransformationMatrix4x4
+        required: true
+        multivalued: false
+      mimeType:
+        name: mimeType
+        range: MimeTypeValue
+        required: false
+        multivalued: false
+      libraryObject:
+        name: libraryObject
+        range: uri
+        required: false
+        multivalued: false
+      relativeGeometry:
+        name: relativeGeometry
+        range: string
+        required: false
+        multivalued: false
+      referencePoint:
+        name: referencePoint
+        range: string
+        required: true
+        multivalued: false
+      appearance:
+        name: appearance
+        range: AbstractAppearance
+        required: false
+        multivalued: true
+  IntegerBetween0and3:
+    name: IntegerBetween0and3
+    description: CityGML class from package Core
+    abstract: false
+  IntervalValue:
+    name: IntervalValue
+    description: CityGML class from package Core
+    abstract: false
+  MeasureOrNilReasonList:
+    name: MeasureOrNilReasonList
+    description: CityGML class from package Core
+    is_a: DoubleOrNilReasonList
+    abstract: false
+    attributes:
+      uom:
+        name: uom
+        range: string
+        required: true
+        multivalued: false
+  MimeTypeValue:
+    name: MimeTypeValue
+    description: CityGML class from package Core
+    abstract: false
+  NilReasonEnumeration:
+    name: NilReasonEnumeration
+    description: CityGML class from package Core
+    abstract: false
+  OccupantTypeValue:
+    name: OccupantTypeValue
+    description: CityGML class from package Core
+    abstract: false
+  OtherRelationTypeValue:
+    name: OtherRelationTypeValue
+    description: CityGML class from package Core
+    is_a: RelationTypeValue
+    abstract: false
+  QualifiedAreaTypeValue:
+    name: QualifiedAreaTypeValue
+    description: CityGML class from package Core
+    abstract: false
+  QualifiedVolumeTypeValue:
+    name: QualifiedVolumeTypeValue
+    description: CityGML class from package Core
+    abstract: false
+  RelationTypeValue:
+    name: RelationTypeValue
+    description: CityGML class from package Core
+    abstract: false
+  TemporalRelationTypeValue:
+    name: TemporalRelationTypeValue
+    description: CityGML class from package Core
+    is_a: RelationTypeValue
+    abstract: false
+  TopologicalRelationTypeValue:
+    name: TopologicalRelationTypeValue
+    description: CityGML class from package Core
+    is_a: RelationTypeValue
+    abstract: false
+  TransformationMatrix2x2:
+    name: TransformationMatrix2x2
+    description: CityGML class from package Core
+    is_a: DoubleList
+    abstract: false
+  TransformationMatrix3x4:
+    name: TransformationMatrix3x4
+    description: CityGML class from package Core
+    is_a: DoubleList
+    abstract: false
+  TransformationMatrix4x4:
+    name: TransformationMatrix4x4
+    description: CityGML class from package Core
+    is_a: DoubleList
+    abstract: false
+  GenericLogicalSpace:
+    name: GenericLogicalSpace
+    description: CityGML class from package Generics
+    is_a: AbstractLogicalSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: GenericLogicalSpaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: GenericLogicalSpaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: GenericLogicalSpaceUsageValue
+        required: false
+        multivalued: true
+      adeOfGenericLogicalSpace:
+        name: adeOfGenericLogicalSpace
+        range: ADEOfGenericLogicalSpace
+        required: false
+        multivalued: true
+  GenericLogicalSpaceClassValue:
+    name: GenericLogicalSpaceClassValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericLogicalSpaceFunctionValue:
+    name: GenericLogicalSpaceFunctionValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericLogicalSpaceUsageValue:
+    name: GenericLogicalSpaceUsageValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericOccupiedSpace:
+    name: GenericOccupiedSpace
+    description: CityGML class from package Generics
+    is_a: AbstractOccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: GenericOccupiedSpaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: GenericOccupiedSpaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: GenericOccupiedSpaceUsageValue
+        required: false
+        multivalued: true
+      adeOfGenericOccupiedSpace:
+        name: adeOfGenericOccupiedSpace
+        range: ADEOfGenericOccupiedSpace
+        required: false
+        multivalued: true
+  GenericOccupiedSpaceClassValue:
+    name: GenericOccupiedSpaceClassValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericOccupiedSpaceFunctionValue:
+    name: GenericOccupiedSpaceFunctionValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericOccupiedSpaceUsageValue:
+    name: GenericOccupiedSpaceUsageValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericThematicSurface:
+    name: GenericThematicSurface
+    description: CityGML class from package Generics
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: GenericThematicSurfaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: GenericThematicSurfaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: GenericThematicSurfaceUsageValue
+        required: false
+        multivalued: true
+      adeOfGenericThematicSurface:
+        name: adeOfGenericThematicSurface
+        range: ADEOfGenericThematicSurface
+        required: false
+        multivalued: true
+  GenericThematicSurfaceClassValue:
+    name: GenericThematicSurfaceClassValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericThematicSurfaceFunctionValue:
+    name: GenericThematicSurfaceFunctionValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericThematicSurfaceUsageValue:
+    name: GenericThematicSurfaceUsageValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericUnoccupiedSpace:
+    name: GenericUnoccupiedSpace
+    description: CityGML class from package Generics
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: GenericUnoccupiedSpaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: GenericUnoccupiedSpaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: GenericUnoccupiedSpaceUsageValue
+        required: false
+        multivalued: true
+      adeOfGenericUnoccupiedSpace:
+        name: adeOfGenericUnoccupiedSpace
+        range: ADEOfGenericUnoccupiedSpace
+        required: false
+        multivalued: true
+  GenericUnoccupiedSpaceClassValue:
+    name: GenericUnoccupiedSpaceClassValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericUnoccupiedSpaceFunctionValue:
+    name: GenericUnoccupiedSpaceFunctionValue
+    description: CityGML class from package Generics
+    abstract: false
+  GenericUnoccupiedSpaceUsageValue:
+    name: GenericUnoccupiedSpaceUsageValue
+    description: CityGML class from package Generics
+    abstract: false
+  LandUse:
+    name: LandUse
+    description: CityGML class from package LandUse
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: LandUseClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: LandUseFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: LandUseUsageValue
+        required: false
+        multivalued: true
+      adeOfLandUse:
+        name: adeOfLandUse
+        range: ADEOfLandUse
+        required: false
+        multivalued: true
+  LandUseClassValue:
+    name: LandUseClassValue
+    description: CityGML class from package LandUse
+    abstract: false
+  LandUseFunctionValue:
+    name: LandUseFunctionValue
+    description: CityGML class from package LandUse
+    abstract: false
+  LandUseUsageValue:
+    name: LandUseUsageValue
+    description: CityGML class from package LandUse
+    abstract: false
+  AbstractReliefComponent:
+    name: AbstractReliefComponent
+    description: CityGML class from package Relief
+    is_a: AbstractSpaceBoundary
+    abstract: true
+    attributes:
+      lod:
+        name: lod
+        range: IntegerBetween0and3
+        required: true
+        multivalued: false
+      adeOfAbstractReliefComponent:
+        name: adeOfAbstractReliefComponent
+        range: ADEOfAbstractReliefComponent
+        required: false
+        multivalued: true
+      extent:
+        name: extent
+        range: string
+        required: false
+        multivalued: false
+  BreaklineRelief:
+    name: BreaklineRelief
+    description: CityGML class from package Relief
+    is_a: AbstractReliefComponent
+    abstract: false
+    attributes:
+      adeOfBreaklineRelief:
+        name: adeOfBreaklineRelief
+        range: ADEOfBreaklineRelief
+        required: false
+        multivalued: true
+      ridgeOrValleyLines:
+        name: ridgeOrValleyLines
+        range: string
+        required: false
+        multivalued: false
+      breaklines:
+        name: breaklines
+        range: string
+        required: false
+        multivalued: false
+  MassPointRelief:
+    name: MassPointRelief
+    description: CityGML class from package Relief
+    is_a: AbstractReliefComponent
+    abstract: false
+    attributes:
+      adeOfMassPointRelief:
+        name: adeOfMassPointRelief
+        range: ADEOfMassPointRelief
+        required: false
+        multivalued: true
+      pointCloud:
+        name: pointCloud
+        range: AbstractPointCloud
+        required: false
+        multivalued: false
+      reliefPoints:
+        name: reliefPoints
+        range: string
+        required: false
+        multivalued: false
+  RasterRelief:
+    name: RasterRelief
+    description: CityGML class from package Relief
+    is_a: AbstractReliefComponent
+    abstract: false
+    attributes:
+      adeOfRasterRelief:
+        name: adeOfRasterRelief
+        range: ADEOfRasterRelief
+        required: false
+        multivalued: true
+      grid:
+        name: grid
+        range: string
+        required: true
+        multivalued: false
+  ReliefFeature:
+    name: ReliefFeature
+    description: CityGML class from package Relief
+    is_a: AbstractSpaceBoundary
+    abstract: false
+    attributes:
+      lod:
+        name: lod
+        range: IntegerBetween0and3
+        required: true
+        multivalued: false
+      adeOfReliefFeature:
+        name: adeOfReliefFeature
+        range: ADEOfReliefFeature
+        required: false
+        multivalued: true
+      reliefComponent:
+        name: reliefComponent
+        range: AbstractReliefComponent
+        required: true
+        multivalued: true
+  TINRelief:
+    name: TINRelief
+    description: CityGML class from package Relief
+    is_a: AbstractReliefComponent
+    abstract: false
+    attributes:
+      adeOfTINRelief:
+        name: adeOfTINRelief
+        range: ADEOfTINRelief
+        required: false
+        multivalued: true
+      tin:
+        name: tin
+        range: string
+        required: true
+        multivalued: false
+  AbstractTransportationSpace:
+    name: AbstractTransportationSpace
+    description: CityGML class from package Transportation
+    is_a: AbstractUnoccupiedSpace
+    abstract: true
+    attributes:
+      trafficDirection:
+        name: trafficDirection
+        range: TrafficDirectionValue
+        required: false
+        multivalued: false
+      occupancy:
+        name: occupancy
+        range: Occupancy
+        required: false
+        multivalued: true
+      adeOfAbstractTransportationSpace:
+        name: adeOfAbstractTransportationSpace
+        range: ADEOfAbstractTransportationSpace
+        required: false
+        multivalued: true
+      auxiliaryTrafficSpace:
+        name: auxiliaryTrafficSpace
+        range: AuxiliaryTrafficSpace
+        required: false
+        multivalued: true
+      hole:
+        name: hole
+        range: Hole
+        required: false
+        multivalued: true
+      trafficSpace:
+        name: trafficSpace
+        range: TrafficSpace
+        required: false
+        multivalued: true
+      marking:
+        name: marking
+        range: Marking
+        required: false
+        multivalued: true
+  AuxiliaryTrafficArea:
+    name: AuxiliaryTrafficArea
+    description: CityGML class from package Transportation
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: AuxiliaryTrafficAreaClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: AuxiliaryTrafficAreaFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: AuxiliaryTrafficAreaUsageValue
+        required: false
+        multivalued: true
+      surfaceMaterial:
+        name: surfaceMaterial
+        range: SurfaceMaterialValue
+        required: false
+        multivalued: false
+      adeOfAuxiliaryTrafficArea:
+        name: adeOfAuxiliaryTrafficArea
+        range: ADEOfAuxiliaryTrafficArea
+        required: false
+        multivalued: true
+  AuxiliaryTrafficAreaClassValue:
+    name: AuxiliaryTrafficAreaClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  AuxiliaryTrafficAreaFunctionValue:
+    name: AuxiliaryTrafficAreaFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  AuxiliaryTrafficAreaUsageValue:
+    name: AuxiliaryTrafficAreaUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  AuxiliaryTrafficSpace:
+    name: AuxiliaryTrafficSpace
+    description: CityGML class from package Transportation
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: AuxiliaryTrafficSpaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: AuxiliaryTrafficSpaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: AuxiliaryTrafficSpaceUsageValue
+        required: false
+        multivalued: true
+      granularity:
+        name: granularity
+        range: GranularityValue
+        required: true
+        multivalued: false
+      adeOfAuxiliaryTrafficSpace:
+        name: adeOfAuxiliaryTrafficSpace
+        range: ADEOfAuxiliaryTrafficSpace
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AuxiliaryTrafficArea
+        required: false
+        multivalued: true
+  AuxiliaryTrafficSpaceClassValue:
+    name: AuxiliaryTrafficSpaceClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  AuxiliaryTrafficSpaceFunctionValue:
+    name: AuxiliaryTrafficSpaceFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  AuxiliaryTrafficSpaceUsageValue:
+    name: AuxiliaryTrafficSpaceUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  ClearanceSpace:
+    name: ClearanceSpace
+    description: CityGML class from package Transportation
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: ClearanceSpaceClassValue
+        required: false
+        multivalued: true
+      adeOfClearanceSpace:
+        name: adeOfClearanceSpace
+        range: ADEOfClearanceSpace
+        required: false
+        multivalued: true
+  ClearanceSpaceClassValue:
+    name: ClearanceSpaceClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Hole:
+    name: Hole
+    description: CityGML class from package Transportation
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: HoleClassValue
+        required: false
+        multivalued: false
+      adeOfHole:
+        name: adeOfHole
+        range: ADEOfHole
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+  HoleClassValue:
+    name: HoleClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  HoleSurface:
+    name: HoleSurface
+    description: CityGML class from package Transportation
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      adeOfHoleSurface:
+        name: adeOfHoleSurface
+        range: ADEOfHoleSurface
+        required: false
+        multivalued: true
+  Intersection:
+    name: Intersection
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: IntersectionClassValue
+        required: false
+        multivalued: false
+      adeOfIntersection:
+        name: adeOfIntersection
+        range: ADEOfIntersection
+        required: false
+        multivalued: true
+  IntersectionClassValue:
+    name: IntersectionClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Marking:
+    name: Marking
+    description: CityGML class from package Transportation
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: MarkingClassValue
+        required: false
+        multivalued: false
+      adeOfMarking:
+        name: adeOfMarking
+        range: ADEOfMarking
+        required: false
+        multivalued: true
+  MarkingClassValue:
+    name: MarkingClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Railway:
+    name: Railway
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: RailwayClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: RailwayFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: RailwayUsageValue
+        required: false
+        multivalued: true
+      adeOfRailway:
+        name: adeOfRailway
+        range: ADEOfRailway
+        required: false
+        multivalued: true
+      intersection:
+        name: intersection
+        range: Intersection
+        required: false
+        multivalued: true
+      section:
+        name: section
+        range: Section
+        required: false
+        multivalued: true
+  RailwayClassValue:
+    name: RailwayClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  RailwayFunctionValue:
+    name: RailwayFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  RailwayUsageValue:
+    name: RailwayUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Road:
+    name: Road
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: RoadClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: RoadFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: RoadUsageValue
+        required: false
+        multivalued: true
+      adeOfRoad:
+        name: adeOfRoad
+        range: ADEOfRoad
+        required: false
+        multivalued: true
+      intersection:
+        name: intersection
+        range: Intersection
+        required: false
+        multivalued: true
+      section:
+        name: section
+        range: Section
+        required: false
+        multivalued: true
+  RoadClassValue:
+    name: RoadClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  RoadFunctionValue:
+    name: RoadFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  RoadUsageValue:
+    name: RoadUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Section:
+    name: Section
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: SectionClassValue
+        required: false
+        multivalued: false
+      adeOfSection:
+        name: adeOfSection
+        range: ADEOfSection
+        required: false
+        multivalued: true
+  SectionClassValue:
+    name: SectionClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Square:
+    name: Square
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: SquareClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: SquareFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: SquareUsageValue
+        required: false
+        multivalued: true
+      adeOfSquare:
+        name: adeOfSquare
+        range: ADEOfSquare
+        required: false
+        multivalued: true
+  SquareClassValue:
+    name: SquareClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  SquareFunctionValue:
+    name: SquareFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  SquareUsageValue:
+    name: SquareUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  SurfaceMaterialValue:
+    name: SurfaceMaterialValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Track:
+    name: Track
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: TrackClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TrackFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TrackUsageValue
+        required: false
+        multivalued: true
+      adeOfTrack:
+        name: adeOfTrack
+        range: ADEOfTrack
+        required: false
+        multivalued: true
+      intersection:
+        name: intersection
+        range: Intersection
+        required: false
+        multivalued: true
+      section:
+        name: section
+        range: Section
+        required: false
+        multivalued: true
+  TrackClassValue:
+    name: TrackClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrackFunctionValue:
+    name: TrackFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrackUsageValue:
+    name: TrackUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrafficArea:
+    name: TrafficArea
+    description: CityGML class from package Transportation
+    is_a: AbstractThematicSurface
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: TrafficAreaClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TrafficAreaFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TrafficAreaUsageValue
+        required: false
+        multivalued: true
+      surfaceMaterial:
+        name: surfaceMaterial
+        range: SurfaceMaterialValue
+        required: false
+        multivalued: false
+      adeOfTrafficArea:
+        name: adeOfTrafficArea
+        range: ADEOfTrafficArea
+        required: false
+        multivalued: true
+  TrafficAreaClassValue:
+    name: TrafficAreaClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrafficAreaFunctionValue:
+    name: TrafficAreaFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrafficAreaUsageValue:
+    name: TrafficAreaUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrafficSpace:
+    name: TrafficSpace
+    description: CityGML class from package Transportation
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: TrafficSpaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TrafficSpaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TrafficSpaceUsageValue
+        required: false
+        multivalued: true
+      granularity:
+        name: granularity
+        range: GranularityValue
+        required: true
+        multivalued: false
+      trafficDirection:
+        name: trafficDirection
+        range: TrafficDirectionValue
+        required: false
+        multivalued: false
+      occupancy:
+        name: occupancy
+        range: Occupancy
+        required: false
+        multivalued: true
+      adeOfTrafficSpace:
+        name: adeOfTrafficSpace
+        range: ADEOfTrafficSpace
+        required: false
+        multivalued: true
+      predecessor:
+        name: predecessor
+        range: TrafficSpace
+        required: false
+        multivalued: true
+      clearanceSpace:
+        name: clearanceSpace
+        range: ClearanceSpace
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: TrafficArea
+        required: false
+        multivalued: true
+      successor:
+        name: successor
+        range: TrafficSpace
+        required: false
+        multivalued: true
+  TrafficSpaceClassValue:
+    name: TrafficSpaceClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrafficSpaceFunctionValue:
+    name: TrafficSpaceFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  TrafficSpaceUsageValue:
+    name: TrafficSpaceUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  Waterway:
+    name: Waterway
+    description: CityGML class from package Transportation
+    is_a: AbstractTransportationSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: WaterwayClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: WaterwayFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: WaterwayUsageValue
+        required: false
+        multivalued: true
+      adeOfWaterway:
+        name: adeOfWaterway
+        range: ADEOfWaterway
+        required: false
+        multivalued: true
+      intersection:
+        name: intersection
+        range: Intersection
+        required: false
+        multivalued: true
+      section:
+        name: section
+        range: Section
+        required: false
+        multivalued: true
+  WaterwayClassValue:
+    name: WaterwayClassValue
+    description: CityGML class from package Transportation
+    abstract: false
+  WaterwayFunctionValue:
+    name: WaterwayFunctionValue
+    description: CityGML class from package Transportation
+    abstract: false
+  WaterwayUsageValue:
+    name: WaterwayUsageValue
+    description: CityGML class from package Transportation
+    abstract: false
+  AbstractTunnel:
+    name: AbstractTunnel
+    description: CityGML class from package Tunnel
+    is_a: AbstractConstruction
+    abstract: true
+    attributes:
+      class:
+        name: class
+        range: TunnelClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TunnelFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TunnelUsageValue
+        required: false
+        multivalued: true
+      adeOfAbstractTunnel:
+        name: adeOfAbstractTunnel
+        range: ADEOfAbstractTunnel
+        required: false
+        multivalued: true
+      tunnelConstructiveElement:
+        name: tunnelConstructiveElement
+        range: TunnelConstructiveElement
+        required: false
+        multivalued: true
+      tunnelFurniture:
+        name: tunnelFurniture
+        range: TunnelFurniture
+        required: false
+        multivalued: true
+      tunnelInstallation:
+        name: tunnelInstallation
+        range: TunnelInstallation
+        required: false
+        multivalued: true
+      hollowSpace:
+        name: hollowSpace
+        range: HollowSpace
+        required: false
+        multivalued: true
+  HollowSpace:
+    name: HollowSpace
+    description: CityGML class from package Tunnel
+    is_a: AbstractUnoccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: HollowSpaceClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: HollowSpaceFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: HollowSpaceUsageValue
+        required: false
+        multivalued: true
+      adeOfHollowSpace:
+        name: adeOfHollowSpace
+        range: ADEOfHollowSpace
+        required: false
+        multivalued: true
+      tunnelInstallation:
+        name: tunnelInstallation
+        range: TunnelInstallation
+        required: false
+        multivalued: true
+      tunnelFurniture:
+        name: tunnelFurniture
+        range: TunnelFurniture
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractThematicSurface
+        required: false
+        multivalued: true
+  HollowSpaceClassValue:
+    name: HollowSpaceClassValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  HollowSpaceFunctionValue:
+    name: HollowSpaceFunctionValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  HollowSpaceUsageValue:
+    name: HollowSpaceUsageValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  Tunnel:
+    name: Tunnel
+    description: CityGML class from package Tunnel
+    is_a: AbstractTunnel
+    abstract: false
+    attributes:
+      adeOfTunnel:
+        name: adeOfTunnel
+        range: ADEOfTunnel
+        required: false
+        multivalued: true
+      tunnelPart:
+        name: tunnelPart
+        range: TunnelPart
+        required: false
+        multivalued: true
+  TunnelClassValue:
+    name: TunnelClassValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelConstructiveElement:
+    name: TunnelConstructiveElement
+    description: CityGML class from package Tunnel
+    is_a: AbstractConstructiveElement
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: TunnelConstructiveElementClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TunnelConstructiveElementFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TunnelConstructiveElementUsageValue
+        required: false
+        multivalued: true
+      adeOfTunnelConstructiveElement:
+        name: adeOfTunnelConstructiveElement
+        range: ADEOfTunnelConstructiveElement
+        required: false
+        multivalued: true
+  TunnelConstructiveElementClassValue:
+    name: TunnelConstructiveElementClassValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelConstructiveElementFunctionValue:
+    name: TunnelConstructiveElementFunctionValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelConstructiveElementUsageValue:
+    name: TunnelConstructiveElementUsageValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelFunctionValue:
+    name: TunnelFunctionValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelFurniture:
+    name: TunnelFurniture
+    description: CityGML class from package Tunnel
+    is_a: AbstractFurniture
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: TunnelFurnitureClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TunnelFurnitureFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TunnelFurnitureUsageValue
+        required: false
+        multivalued: true
+      adeOfTunnelFurniture:
+        name: adeOfTunnelFurniture
+        range: ADEOfTunnelFurniture
+        required: false
+        multivalued: true
+  TunnelFurnitureClassValue:
+    name: TunnelFurnitureClassValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelFurnitureFunctionValue:
+    name: TunnelFurnitureFunctionValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelFurnitureUsageValue:
+    name: TunnelFurnitureUsageValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelInstallation:
+    name: TunnelInstallation
+    description: CityGML class from package Tunnel
+    is_a: AbstractInstallation
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: TunnelInstallationClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: TunnelInstallationFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: TunnelInstallationUsageValue
+        required: false
+        multivalued: true
+      adeOfTunnelInstallation:
+        name: adeOfTunnelInstallation
+        range: ADEOfTunnelInstallation
+        required: false
+        multivalued: true
+  TunnelInstallationClassValue:
+    name: TunnelInstallationClassValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelInstallationFunctionValue:
+    name: TunnelInstallationFunctionValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelInstallationUsageValue:
+    name: TunnelInstallationUsageValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  TunnelPart:
+    name: TunnelPart
+    description: CityGML class from package Tunnel
+    is_a: AbstractTunnel
+    abstract: false
+    attributes:
+      adeOfTunnelPart:
+        name: adeOfTunnelPart
+        range: ADEOfTunnelPart
+        required: false
+        multivalued: true
+  TunnelUsageValue:
+    name: TunnelUsageValue
+    description: CityGML class from package Tunnel
+    abstract: false
+  AbstractVegetationObject:
+    name: AbstractVegetationObject
+    description: CityGML class from package Vegetation
+    is_a: AbstractOccupiedSpace
+    abstract: true
+    attributes:
+      adeOfAbstractVegetationObject:
+        name: adeOfAbstractVegetationObject
+        range: ADEOfAbstractVegetationObject
+        required: false
+        multivalued: true
+  PlantCover:
+    name: PlantCover
+    description: CityGML class from package Vegetation
+    is_a: AbstractVegetationObject
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: PlantCoverClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: PlantCoverFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: PlantCoverUsageValue
+        required: false
+        multivalued: true
+      averageHeight:
+        name: averageHeight
+        range: float
+        required: false
+        multivalued: false
+      minHeight:
+        name: minHeight
+        range: float
+        required: false
+        multivalued: false
+      maxHeight:
+        name: maxHeight
+        range: float
+        required: false
+        multivalued: false
+      adeOfPlantCover:
+        name: adeOfPlantCover
+        range: ADEOfPlantCover
+        required: false
+        multivalued: true
+  PlantCoverClassValue:
+    name: PlantCoverClassValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  PlantCoverFunctionValue:
+    name: PlantCoverFunctionValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  PlantCoverUsageValue:
+    name: PlantCoverUsageValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  SolitaryVegetationObject:
+    name: SolitaryVegetationObject
+    description: CityGML class from package Vegetation
+    is_a: AbstractVegetationObject
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: SolitaryVegetationObjectClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: SolitaryVegetationObjectFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: SolitaryVegetationObjectUsageValue
+        required: false
+        multivalued: true
+      species:
+        name: species
+        range: SpeciesValue
+        required: false
+        multivalued: false
+      height:
+        name: height
+        range: float
+        required: false
+        multivalued: false
+      trunkDiameter:
+        name: trunkDiameter
+        range: float
+        required: false
+        multivalued: false
+      crownDiameter:
+        name: crownDiameter
+        range: float
+        required: false
+        multivalued: false
+      rootBallDiameter:
+        name: rootBallDiameter
+        range: float
+        required: false
+        multivalued: false
+      maxRootBallDepth:
+        name: maxRootBallDepth
+        range: float
+        required: false
+        multivalued: false
+      adeOfSolitaryVegetationObject:
+        name: adeOfSolitaryVegetationObject
+        range: ADEOfSolitaryVegetationObject
+        required: false
+        multivalued: true
+  SolitaryVegetationObjectClassValue:
+    name: SolitaryVegetationObjectClassValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  SolitaryVegetationObjectFunctionValue:
+    name: SolitaryVegetationObjectFunctionValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  SolitaryVegetationObjectUsageValue:
+    name: SolitaryVegetationObjectUsageValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  SpeciesValue:
+    name: SpeciesValue
+    description: CityGML class from package Vegetation
+    abstract: false
+  AbstractWaterBoundarySurface:
+    name: AbstractWaterBoundarySurface
+    description: CityGML class from package WaterBody
+    is_a: AbstractThematicSurface
+    abstract: true
+    attributes:
+      adeOfAbstractWaterBoundarySurface:
+        name: adeOfAbstractWaterBoundarySurface
+        range: ADEOfAbstractWaterBoundarySurface
+        required: false
+        multivalued: true
+  WaterBody:
+    name: WaterBody
+    description: CityGML class from package WaterBody
+    is_a: AbstractOccupiedSpace
+    abstract: false
+    attributes:
+      class:
+        name: class
+        range: WaterBodyClassValue
+        required: false
+        multivalued: false
+      function:
+        name: function
+        range: WaterBodyFunctionValue
+        required: false
+        multivalued: true
+      usage:
+        name: usage
+        range: WaterBodyUsageValue
+        required: false
+        multivalued: true
+      adeOfWaterBody:
+        name: adeOfWaterBody
+        range: ADEOfWaterBody
+        required: false
+        multivalued: true
+      boundary:
+        name: boundary
+        range: AbstractWaterBoundarySurface
+        required: false
+        multivalued: true
+  WaterBodyClassValue:
+    name: WaterBodyClassValue
+    description: CityGML class from package WaterBody
+    abstract: false
+  WaterBodyFunctionValue:
+    name: WaterBodyFunctionValue
+    description: CityGML class from package WaterBody
+    abstract: false
+  WaterBodyUsageValue:
+    name: WaterBodyUsageValue
+    description: CityGML class from package WaterBody
+    abstract: false
+  WaterGroundSurface:
+    name: WaterGroundSurface
+    description: CityGML class from package WaterBody
+    is_a: AbstractWaterBoundarySurface
+    abstract: false
+    attributes:
+      adeOfWaterGroundSurface:
+        name: adeOfWaterGroundSurface
+        range: ADEOfWaterGroundSurface
+        required: false
+        multivalued: true
+  WaterLevelValue:
+    name: WaterLevelValue
+    description: CityGML class from package WaterBody
+    abstract: false
+  WaterSurface:
+    name: WaterSurface
+    description: CityGML class from package WaterBody
+    is_a: AbstractWaterBoundarySurface
+    abstract: false
+    attributes:
+      waterLevel:
+        name: waterLevel
+        range: WaterLevelValue
+        required: false
+        multivalued: false
+      adeOfWaterSurface:
+        name: adeOfWaterSurface
+        range: ADEOfWaterSurface
+        required: false
+        multivalued: true
